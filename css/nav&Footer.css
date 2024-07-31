@@ -85,7 +85,7 @@ footer ul li{
 /* Landscape phone to portrait tablet */
 @media (max-width: 767px) {
     .navbar-brand img {
-        width: 25%
+        width: 40%
     }
   .nav-link{
 font-size: 13px;
@@ -97,4 +97,9 @@ font-size: 12px;
     font-size: 12px;
       }
 }
+@media (max-width: 480px) {
+    .navbar-brand img {
+        width: 35%
+
+    }}
 
