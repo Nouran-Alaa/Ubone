@@ -18,7 +18,7 @@ nav {
 .nav-link {
     margin: 0 10px;
     position: relative;
-    font-size: 20px; 
+    font-size: 20px;
     margin: 0 10px;
     color: #222 !important;
     text-align: left;
@@ -29,7 +29,7 @@ nav {
 nav .active {
     border-bottom: solid 3px rgb(71, 84, 118);
     color: rgb(71, 84, 118) !important;
-font-weight: 500;
+    font-weight: 500;
 }
 
 nav li:hover .nav-link {
@@ -51,7 +51,8 @@ footer ul {
     padding: 0;
 
 }
-footer ul li{
+
+footer ul li {
     font-size: 16px;
 }
 
@@ -64,19 +65,23 @@ footer ul li{
 
     .navbar-nav,
     .navbar-toggler {
+
         background-color: #f5f5f6 !important;
         /* color: white; */
     }
+
     .navbar-toggler:focus {
-        box-shadow: 0 0 0 0 ;
+        box-shadow: 0 0 0 0;
     }
 
-    .nav-link, nav .active  {
+    .nav-link,
+    nav .active {
         margin: 0;
-  border-bottom: rgba(34, 34, 34, 0.1) 1px solid;
-        padding: 5px  !important;
+        border-bottom: rgba(34, 34, 34, 0.1) 1px solid;
+        padding: 5px !important;
     }
-    .navbar .container-fluid{
+
+    .navbar .container-fluid {
         padding: 0 !important;
     }
 
@@ -87,19 +92,33 @@ footer ul li{
     .navbar-brand img {
         width: 40%
     }
-  .nav-link{
-font-size: 13px;
-  }
-  footer h6 {
-font-size: 12px;
-  }
-  footer ul li {
-    font-size: 12px;
-      }
+
+    .nav-link {
+        font-size: 13px;
+    }
+
+    footer h6 {
+        font-size: 12px;
+    }
+
+    footer ul li {
+        font-size: 12px;
+    }
 }
+
 @media (max-width: 480px) {
+
     .navbar-brand img {
-        width: 35%
+        width: 25%
+    }
+.navbar-toggler{
+    font-size: 10px;
+}
+    footer h6 {
+        font-size: 13px;
+    }
 
-    }}
-
+    footer ul li {
+        font-size: 13px;
+    }
+}

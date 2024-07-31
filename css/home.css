@@ -254,7 +254,9 @@
 }
 
 /* Input */
-
+.email-input{
+  width: 50%;
+}
 .input-group input:focus {
   box-shadow: 0 0 0;
   border: #222 solid 1px !important;
@@ -324,7 +326,10 @@
   .slider-content h2 {
     /* font-size: 1.1rem; */    margin-bottom: 5px;
   }
- }
+  .email-input{
+    width: 75%;
+  } 
+}
   /* Landscape phone to portrait tablet */
 @media (max-width: 480px) { 
   .slider-content {
@@ -333,8 +338,11 @@
     font-weight: 600;
 
   }
+  .email-input{
+    width: 100%;
+  }
   html{
-    font-size: 12px !important;
+    font-size: 13px !important;
   }
   .collection-btn {
     padding: 0.4rem 1rem;
