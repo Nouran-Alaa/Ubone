@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" crossorigin="anonymous">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-white p-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-2xl font-bold"><a href="index.html">UBONE</a></div>
+            <div>
+                <a href="index.html" class="mx-2 text-gray-600 hover:text-gray-800">Home</a>
+                <a href="#" class="mx-2 text-gray-600 hover:text-gray-800">Shop</a>
+                <a href="#" class="mx-2 text-gray-600 hover:text-gray-800">Products</a>
+                <a href="#" class="mx-2 text-gray-600 hover:text-gray-800">Blogs</a>
+                <a href="#" class="mx-2 text-gray-600 hover:text-gray-800">Pages</a>
+            </div>
+            <div>
+                <a href="wishlist.html" class="mx-2 text-gray-600 hover:text-gray-800"><i class="fas fa-heart"></i></a>
+                <a href="cart.html" class="mx-2 text-gray-600 hover:text-gray-800"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cart Content -->
+    <div class="container mx-auto mt-10">
+        <div class="bg-white p-10 rounded-lg shadow-lg">
+            <h1 class="text-2xl font-bold mb-4">Your Cart</h1>
+            <div id="cart-products" class="flex flex-col space-y-4">
+                <!-- Cart products will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            if (cart.length > 0) {
+                cart.forEach(productId => {
+                    fetch(`https://dummyjson.com/products/${productId}`)
+                        .then(response => response.json())
+                        .then(product => {
+                            const cartProductsContainer = document.getElementById('cart-products');
+                            const cartProduct = document.createElement('div');
+                            cartProduct.classList.add('flex', 'items-center', 'bg-gray-100', 'p-4', 'rounded-lg');
+                            cartProduct.innerHTML = `
+                                <img src="${product.images[0]}" alt="${product.title}" class="w-1/4 rounded-lg">
+                                <div class="ml-4">
+                                    <h2 class="text-xl font-bold">${product.title}</h2>
+                                    <p class="text-gray-600 mt-2">$${product.price}</p>
+                                    <p class="text-gray-700 mt-4">${product.description}</p>
+                                    <button class="mt-4 bg-red-600 text-white px-4 py-2 rounded-lg" onclick="removeFromCart(${product.id})">Remove</button>
+                                </div>
+                            `;
+                            cartProductsContainer.appendChild(cartProduct);
+                        })
+                        .catch(error => console.error('Error fetching product:', error));
+                });
+            } else {
+                document.getElementById('cart-products').innerHTML = '<p>Your cart is empty.</p>';
+            }
+        });
+
+        function removeFromCart(productId) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(id => id !== productId);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>
