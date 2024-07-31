@@ -1,0 +1,133 @@
+/* Product container "GRID" => (emOVE IF U DON'T WANT IT)*/
+
+/* ----------------------------------------------- */
+/* html{
+  font-size: 10px;
+} */
+#products .product{
+  /* width: 25%; */
+  font-size: 10px;
+  text-align: center;
+}
+/* .product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding-top: 25px;
+} */
+
+/* PRODUCT CONTAINER */
+/* ----------------------------------------------- */
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.6s ease;
+  /* margin: 0 5px; */
+}.products-info{
+  z-index: 22;
+}
+
+.products-info p {
+  font-size: 1.7em;
+  font-weight: bold;
+  color: #000;
+}
+
+.product img {
+  background-color: white;
+
+  margin-bottom: 10px;
+  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+}
+.product-img-next {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* width: 100%; */
+  /* height: auto; */
+  opacity: 0; /* Hide the next image by default */
+  transition: opacity 0.6s ease;
+}
+
+/* Product and Product images effect on hover */
+/* ----------------------------------------------- */
+.product:hover {
+  background-color: white;
+  box-shadow: 4px 4px 40px rgba(0, 0, 0, 0.105);
+  cursor: pointer;
+}
+.product:hover .product-img-next {
+  opacity: 1; /* Show the next image on hover */
+}
+.product:hover .product-img-main {
+  opacity: 0; /* Show the next image on hover */
+}
+
+/* Products prices section */
+/* ----------------------------------------------- */
+.products-prices {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+.products-prices > p {
+  font-size: 1.6em;
+  color: #636363;
+}
+.products-prices > p:last-of-type {
+  text-decoration: line-through;
+}
+
+/* DISCOUNT */
+/* ----------------------------------------------- */
+.discount {
+  position: absolute;
+  top: 15px;
+  margin: 1em 1em;
+}
+
+.discount h3 {
+  font-size: 1.1em;
+  padding: 0px 5px;
+  font-weight: 300;
+  color: white;
+  background-color: #6d8c62;
+}
+
+/* ICONS (QUICK VIEW - CART - WISHLIST) */
+/* ----------------------------------------------- */
+.overlay {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 20em;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  gap: 0.1em;
+}
+
+.product:hover .overlay {
+  opacity: 1; /*display overlay "icons" when hovering on the product */
+}
+
+.icon {
+  background-color: black;
+  color: #f0f0f0;
+  font-size: 1.7em;
+  padding: 7px 7px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  background-color: #475476;
+}
