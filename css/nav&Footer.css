@@ -18,7 +18,7 @@ nav {
 .nav-link {
     margin: 0 10px;
     position: relative;
-    font-size: 1.3rem; 
+    font-size: 20px; 
     margin: 0 10px;
     color: #222 !important;
     text-align: left;
@@ -41,6 +41,7 @@ nav li:hover .nav-link {
 footer h6 {
     color: #222;
     font-weight: 600;
+    font-size: 16px;
 }
 
 footer ul {
@@ -49,6 +50,9 @@ footer ul {
     list-style: none;
     padding: 0;
 
+}
+footer ul li{
+    font-size: 16px;
 }
 
 /* Portrait tablet to landscape and desktop */
@@ -83,6 +87,14 @@ footer ul {
     .navbar-brand img {
         width: 25%
     }
-  
+  .nav-link{
+font-size: 13px;
+  }
+  footer h6 {
+font-size: 12px;
+  }
+  footer ul li {
+    font-size: 12px;
+      }
 }
 
