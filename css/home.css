@@ -1,0 +1,402 @@
+.body {
+  font-family: "Urbanist", sans-serif;
+  box-sizing: border-box;
+  color: var(--main-color);
+  font-size: 16px;
+}
+
+:root {
+  --main-color: #222;
+}
+
+/* nav bar */
+nav {
+  background-color: #f5f5f623;
+}
+.navbar-brand img {
+  width: 50%
+}
+.nav-link {
+  margin: 0 10px;
+  position: relative;
+  font-size: 20px;
+  color: var(--main-color) !important;
+  text-align: left;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -100px;
+  width: 100%;
+  background-color: #222;
+  height: 2px;
+  transition: all 0.3s;
+}
+
+nav li:hover .nav-link::after {
+left: 0;
+}
+
+
+/* ---------------------sliders-------------------- */
+.slider-content {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  /* overflow: hidden; */
+  font-weight: 600;
+  max-width: 50%;
+}
+
+.slider-content p {
+  color: #2d2c31;
+  font-size: 1.5rem;
+
+}
+
+.slider-content h2 {
+  color: #2c2c32;
+  font-size: 5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  /* line-height: 5rem; */
+}
+
+.collection-btn {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 1.25rem 1.8rem;
+  transition: all 0.3s;
+}
+
+.collection-btn:hover,
+.category:hover .icon-holder-cantegory {
+  background-color: RGB(71, 84, 118);
+  color: #fff;
+}
+
+/*---------------------------- Offers ---------------------------- */
+.offers-1 h6 {
+  color: var(--main-color);
+  font-size: 1.7rem;
+}
+
+.offers {
+  text-decoration: underline;
+
+}
+
+.sale h6 {
+  font-weight: 600;
+  font-size: 1.12rem;
+  color: var(--main-color);
+}
+
+.sale {
+  background-color: #f5f5f6;
+  ;
+  padding: 1.25rem;
+  border: 1px solid rgba(51, 51, 51, 0.2);
+}
+
+.sale p {
+  font-weight: 500;
+  color: #636363
+}
+
+.sale button {
+  font-size: 0.9rem;
+  padding: 13px 20px !important;
+}
+
+/*---------------------------- categories ---------------------------- */
+.shirts-category {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  right: 1rem;
+  z-index: 22;
+}
+
+.shoes-category {
+  position: absolute;
+  left: 1rem;
+  right: 1rem;
+  z-index: 22;
+  bottom: 1rem;
+}
+
+.category {
+  cursor: pointer !important;
+  width: 100%;
+}
+
+.categories-section h6 {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.categories-section span {
+  color: #636363;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.icon-holder-cantegory {
+  background-color: #f5f5f6;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.1s;
+}
+
+.icon-holder-cantegory i {
+  transform: translate(-25%);
+}
+
+.categories-header {
+  border-top: 3 solid #636363 !important;
+}
+
+.categories-header span {
+  color: #636363;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.categories-header h2 {
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+/* animation */
+.ticker-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+}
+
+.ticker {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 15s linear infinite;
+}
+
+.ticker p {
+  display: inline;
+  margin: 0 2em;
+  font-size: 1.5rem;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+
+}
+
+/* Girls Offers */
+.girl-offers {
+  color: #2d2c31;
+  background-color: #e4edf6;
+  padding: 30px;
+}
+
+.girl-offers .span1 {
+  text-decoration: underline;
+  font-size: 1.7rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.girl-offers h2 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+}
+
+.girl-offers .h2-span {
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+.girl-offers button {
+  background-color: transparent;
+  color: #222;
+  border: #222 1px solid;
+  padding: 10px 15px;
+}
+
+/* BLOGS */
+.blog p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--main-color) !important
+}
+
+.blog span {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #636363;
+}
+
+.img-layer {
+  overflow: hidden;
+}
+
+.img-layer img {
+  transition: all .3s ease-in-out 0s
+}
+
+.layer {
+  position: absolute;
+  z-index: 60;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2222225c;
+  opacity: 0;
+  transition: all .3s ease-in-out 0s
+}
+
+.blog:hover .layer {
+  opacity: 1;
+}
+
+.blog:hover .img-layer img {
+  transform: scale(1.1);
+}
+
+/* Input */
+
+.input-group input:focus {
+  box-shadow: 0 0 0;
+  border: #222 solid 1px !important;
+}
+
+.input-group button:hover {
+  background-color: #222 !important;
+}
+
+/* Featur */
+.featur-section {
+  border-bottom: rgba(34, 34, 34, 0.1) 1px solid;
+}
+
+.featur h6 {
+  font-weight: 600;
+  margin: 2rem 0 5px;
+  color: var(--main-color);
+}
+
+.featur span {
+  font-weight: 500;
+  color: #636363;
+}
+
+/*------------------------ Footer ------------------------------- */
+footer h6 {
+  color: var(--main-color);
+  font-weight: 600;
+}
+
+footer ul {
+  color: #636363;
+  font-weight: 400;
+  list-style: none;
+  padding: 0;
+
+}
+/* Media  query */
+/* Large desktop */
+@media (max-width: 1200px) { 
+  html{
+    font-size: 14px !important;
+  }
+  .slider-content h2 {
+    font-size: 3rem;
+  }
+  .girl-offers h2 {
+    font-size: 4rem;
+  }
+ }
+ /* Portrait tablet to landscape and desktop */
+ @media (max-width: 979px) { 
+  .navbar-brand img {
+    width: 40%;
+  }
+  html{
+    font-size: 12px !important;
+  }
+  .slider-content h2 {
+    font-size: 3rem;
+  }
+  .girl-offers h2 {
+    font-size: 4rem;
+  }  
+ }
+ /* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+  .navbar-brand img {
+    width: 20%
+  }
+  html{
+    font-size: 9px !important;
+  }
+  .slider-content h2 {
+    font-size: 3rem;
+  }
+  .girl-offers h2 {
+    font-size: 4rem;
+  }  
+ }
+  /* Landscape phone to portrait tablet */
+@media (max-width: 480px) { 
+  .slider-content {
+    top: 60%;
+    transform: translateY(-50%);
+    font-weight: 600;
+
+  }
+  .navbar-brand img {
+    width: 15%
+  }
+  html{
+    font-size: 12px !important;
+  }
+  .collection-btn {
+    padding: 0.8rem 1rem;
+  font-size: 0.8rem;
+  }
+  .slider-content h2 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  .slider-content p {
+    font-size: 1.1rem;
+    margin-bottom: 0px;
+  }
+  .girl-offers h2 {
+    font-size: 4rem;
+  }  
+ }
+ 
