@@ -82,5 +82,5 @@ getData();
 
 // redirect to product detail page with the product ID
 function redirectToDetail(productId) {
-    window.location.href = `product-detail.html?id=${productId}`;
+    window.location.href = `/html/product-detail.html?id=${productId}`;
 }
