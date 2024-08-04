@@ -13,6 +13,7 @@ window.addEventListener('scroll', function() {
 
 const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
 const cartCounterElement = document.querySelector(".cart-counter");
+
 function updateCartCounter() {
   const cartCounterElement = document.querySelector(".cart-counter");
   if (cartCounterElement) {
@@ -22,6 +23,11 @@ function updateCartCounter() {
     );
   }
 }
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("DOM fully loaded and parsed");
+  updateCartCounter();
+});
+
 function updateWishlistCounter() {
   let userWishList = JSON.parse(sessionStorage.getItem("userWishList")) || [];
   const wishlistCounterElement = document.querySelector(".wishlist-counter");
