@@ -2,9 +2,11 @@
   font-family: "Urbanist", sans-serif;
   box-sizing: border-box;
   color: var(--main-color);
-  font-size: 16px;
 }
+html{
+  font-size: 16px;
 
+}
 :root {
   --main-color: #222;
 }

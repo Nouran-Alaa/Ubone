@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//////////////
+
 document.addEventListener("DOMContentLoaded", () => {
   const sortSelect = document.getElementById("sort");
 
@@ -334,6 +334,7 @@ function sortProducts(sortBy) {
       break;
   }
 }
+
 ///////////////
 function setupPagination() {
   const pagination = document.querySelector(".pagination");
