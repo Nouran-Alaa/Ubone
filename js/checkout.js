@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         <div class="cart-item-totals py-2">
                           <div class="item-price">
-                            <span class="heading">$ ${itemTotal}</span>
+                            <span class="heading">$${itemTotal}</span>
                           </div>
                         </div>
                       </div>`;

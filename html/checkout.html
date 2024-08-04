@@ -217,6 +217,7 @@
                             class="form-control"
                             id="zipcode"
                             placeholder="ZIP code"
+                            maxlength="5"
                           />
                           <label for="zipcode" class="text-muted"
                             >ZIP code
@@ -280,30 +281,12 @@
                         </p>
                       </div>
                     </form>
-
-                    <div class="py-2">
-                      <h6 class="pb-2">Shipping method</h6>
-
-                      <div class="form-floating">
-                        <input
-                          type="text"
-                          class="form-control bg-light"
-                          id="ship"
-                          placeholder="address"
-                          disabled
-                        />
-                        <label for="ship" class="text-muted small"
-                          >Enter your shipping address to view available
-                          shipping methods.</label
-                        >
-                      </div>
-                    </div>
                   </div>
 
                   <!-- Payment Method -->
                   <div class="payment">
                     <h5>Payment</h5>
-                    <p class="text-muted small">
+                    <p class="text-muted">
                       All transactions are secure and encrypted.
                     </p>
 
@@ -454,7 +437,7 @@
 
                     <!-- Billing Address -->
 
-                    <h6 class="pb-2 pt-4">Billing address</h6>
+                    <h6 class="pb-2 pt-4 billing-font">Billing address</h6>
 
                     <div
                       class="accordion accordion-flush border cordion"
@@ -641,7 +624,18 @@
                     </button>
                   </div>
 
-                  <p>All rights reserved Ubone (password: 1)</p>
+                  <!-- Try and write this codes/addresses -->
+                  <div class="codes">
+                    <p>
+                      Discount codes: <span class="fw-bold">ubone-10</span> or
+                      <span class="fw-bold">ubone-20</span>
+                    </p>
+                    <p>
+                      Shipping Address: <span class="fw-bold">Cairo</span>,
+                      <span class="fw-bold">Giza</span> or
+                      <span class="fw-bold">Alex</span>
+                    </p>
+                  </div>
                 </div>
               </div>
               <!-- end left side-->
