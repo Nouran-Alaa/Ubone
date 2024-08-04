@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/products.css" />
+    <script defer src="../js/products.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1c758ec64d.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Ubone</title>
+  </head>
+  <body>
+    <i
+      class="fa-solid fa-arrow-up scroll-to-top"
+      id="scrollToTopBtn"
+      aria-label="Scroll to Top"
+    ></i>
+    <main>
+      <!-- Quick View Modal -->
+      <div id="quickViewModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <div class="modal-body">
+            <div class="modal-body--left">
+              <img
+                id="modalImage"
+                src=""
+                alt="Product Image"
+                class="modalImage modalImage-main"
+              />
+              <img
+                id="modalImage"
+                src=""
+                alt="Product Image"
+                class="modalImage modalImage-secondary--1"
+              />
+              <img
+                id="modalImage"
+                src=""
+                alt="Product Image"
+                class="modalImage modalImage-secondary--2"
+              />
+              <img
+                id="modalImage"
+                src=""
+                alt="Product Image"
+                class="modalImage modalImage-secondary--3"
+              />
+            </div>
+            <div class="modal-body--right">
+              <div class="modal-right--top">
+                <h2 id="modalTitle">Product Title</h2>
+                <div class="modalReviews-container">
+                  <div>
+                    <i
+                      class="fa-solid fa-star fa-lg"
+                      style="color: #e3b40d"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star fa-lg"
+                      style="color: #e3b40d"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star fa-lg"
+                      style="color: #e3b40d"
+                    ></i>
+                    <i
+                      class="fa-solid fa-star fa-lg"
+                      style="color: #e3b40d"
+                    ></i>
+                    <i
+                      class="fa-regular fa-star fa-lg"
+                      style="color: #e3b40d"
+                    ></i>
+                  </div>
+                  <p id="modalRating">Rating</p>
+                </div>
+                <div class="modalPrices-container">
+                  <p id="modalPrice">Product Price</p>
+                  <p id="modalDiscountPrice">Old Price</p>
+                  <p id="modalDiscount">Discount</p>
+                </div>
+                <div class="modalAvailability-container">
+                  <p id="modalAvailability">
+                    <strong>Availability</strong> : In stock
+                  </p>
+                </div>
+              </div>
+              <div class="modal-right--middle">
+                <p id="modalDescription">Product Description</p>
+              </div>
+              <div class="modal-right--bottom">
+                <div class="quantity-selector">
+                  <button
+                    class="quantity-btn decrease"
+                    aria-label="Decrease Quantity"
+                  >
+                    -
+                  </button>
+                  <input
+                    type="text"
+                    id="quantityInput"
+                    value="1"
+                    aria-label="Quantity"
+                    readonly
+                  />
+                  <button
+                    class="quantity-btn increase"
+                    aria-label="Increase Quantity"
+                  >
+                    +
+                  </button>
+                </div>
+                <a href="#" class="add-Cart-btn-m">Add to Cart</a>
+              </div>
+              <div class="modal-right--footer">
+                <a href="#">BUY IT NOW</a>
+                <div class="modalFooter-cardIcons" style="color: #475476">
+                  <i class="fa-brands fa-cc-visa"></i>
+                  <i class="fa-brands fa-cc-mastercard"></i>
+                  <i class="fa-brands fa-cc-amex"></i>
+                  <i class="fa-brands fa-cc-paypal"></i>
+                  <i class="fa-brands fa-cc-diners-club"></i>
+                  <i class="fa-brands fa-cc-discover"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="static-text">
+          <div class="static-part last-part">
+            ORDER ONLINE CALL US +90 8765 3214.
+          </div>
+          <div class="static-part first-part">
+            SUMMER SALE DISCOUNT 70% UP TO OFF.
+          </div>
+        </div>
+        <div class="marquee">
+          <div class="marquee-content">
+            <div class="marquee-text">SUMMER SALE DISCOUNT 70% UP TO OFF.</div>
+            <div class="marquee-text">ORDER ONLINE CALL US +90 8765 3214.</div>
+            <div class="marquee-text">SUMMER SALE DISCOUNT 70% UP TO OFF.</div>
+            <div class="marquee-text">ORDER ONLINE CALL US +90 8765 3214.</div>
+          </div>
+        </div>
+      </div>
+
+      <header>
+        <!-- NAV BAR -->
+        <nav class="navbar" id="navbar">
+          <!-- BURGER MENU ICON -->
+          <div class="burger" id="burger" onclick="toggleMenu()">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+          </div>
+
+          <!-- Logo IMAGE -->
+          <a href="#" class="brand">
+            <img src="../images/logo-9.png" class="logo-img" id="logo-img" />
+          </a>
+
+          <!-- NAV LINKS -->
+          <ul class="nav-links">
+            <li><a class="nav-link" href="../index.html">Home</a></li>
+            <li><a class="nav-link" href="#">Shop</a></li>
+            <li><a class="nav-link" href="#">About</a></li>
+            <li><a class="nav-link" href="#">Contact</a></li>
+          </ul>
+
+          <!-- NAV ICONS -->
+          <div class="nav-icons">
+            <a href="#"
+              ><i
+                class="fa-solid fa-cart-shopping fa-2xl"
+                style="color: black"
+              ></i>
+              <span class="cart-counter">0</span></a
+            >
+
+            <a href="#"
+              ><i class="fa-solid fa-heart fa-2xl" style="color: black"></i>
+              <span class="wishlist-counter">0</span></a
+            >
+          </div>
+        </nav>
+        <!-- BURGER MENU -->
+        <div class="mobile-menu" id="mobile-menu">
+          <div class="close-btn" onclick="toggleMenu()">&times;</div>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <!-- nav icons -->
+      </header>
+      <!-- Banner -->
+      <div class="banner">
+        <div><a href="../index.html">Home</a> <a href="#"> &gt; Shop</a></div>
+        <h1>Shop</h1>
+      </div>
+
+      <!-- Section -->
+      <section class="catergories-section">
+        <div class="carousel">
+          <i
+            class="fa-solid fa-arrow-left fa-sm left-arrow arrow"
+            style="color: white"
+          ></i>
+
+          <div class="carousel-content">
+            <div class="item">
+              <div class="image-container">
+                <img src="../images/top.jpg" style="fill: #e8e4e4" alt="Tops" />
+              </div>
+              <p>Tops</p>
+            </div>
+
+            <div class="item">
+              <div class="image-container">
+                <img
+                  src="../images/glasses-banner-part-04.jpg"
+                  alt="Glasses"
+                  style="fill: #e8e4e4"
+                />
+              </div>
+              <p>Glasses</p>
+            </div>
+
+            <div class="item">
+              <div class="image-container">
+                <img src="../images/bag-banner-05.jpg" alt="Bags" />
+              </div>
+              <p>Bags</p>
+            </div>
+
+            <div class="item">
+              <div class="image-container">
+                <img src="../images/shoes-banner-02.jpg" alt="Shoes" />
+              </div>
+              <p>Shoes</p>
+            </div>
+
+            <div class="item">
+              <div class="image-container">
+                <img
+                  src="../images/watches.jpg"
+                  alt="Watches"
+                  style="fill: #e8e4e4"
+                />
+              </div>
+              <p>Watches</p>
+            </div>
+          </div>
+          <i
+            class="fa-solid fa-arrow-right fa-sm right-arrow arrow"
+            style="color: white"
+          ></i>
+        </div>
+      </section>
+
+      <div class="container">
+        <aside class="sidebar">
+          <div class="filter-sidebar">
+            <button class="close-sidebar-btn">
+              <i class="fa fa-times"></i>
+            </button>
+
+            <div class="filter-wrapper">
+              <h2>Filters</h2>
+              <h4 id="resetFilters" class="reset">Reset</h4>
+            </div>
+
+            <!-- Categories Filter -->
+            <div>
+              <h3>Categories</h3>
+              <div class="filter-section" id="category-filter"></div>
+            </div>
+
+            <!-- Availability Filter -->
+            <div class="filter-section" id="availability-filter">
+              <h3>Availability</h3>
+            </div>
+
+            <!-- Price Range Filter -->
+            <div class="filter-section" id="price-range-filter">
+              <h3>Price Range</h3>
+              <input
+                type="range"
+                id="price-range"
+                min="0"
+                max="1000"
+                value="500"
+              />
+
+              <div class="price-range-output">
+                <span id="min-price">0</span> <span id="max-price">1000</span>
+              </div>
+            </div>
+
+            <!-- Brand Filter -->
+            <div>
+              <h3>Brand</h3>
+              <div class="filter-section" id="brand-filter"></div>
+              <div class="filter-section">
+                <img
+                  src="../images/categories-left-banner-01.jpg"
+                  class="ads-image"
+                />
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <main class="main-content">
+          <div class="header">
+            <button class="toggle-sidebar-btn">
+              <i class="fa fa-filter"></i>
+            </button>
+            <div class="sort-options">
+              <label for="sort">Sort by:</label>
+              <select id="sort" class="sort">
+                <option value="az">Alphabetically, A-Z</option>
+                <option value="za">Alphabetically, Z-A</option>
+                <option value="low-high">Price, low to high</option>
+                <option value="high-low">Price, high to low</option>
+              </select>
+            </div>
+          </div>
+          <div class="product-grid">
+            <!-- Products will be inserted here via JavaScript -->
+          </div>
+          <div class="pagination">
+            <!-- Pagination buttons will be inserted here via JavaScript -->
+          </div>
+        </main>
+      </div>
+
+      <div class="our-service-area">
+        <div>
+          <i class="fa-solid fa-location-dot fa-lg" style="color: #000000"></i>
+          <h3>Order Tracking</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-rotate-left fa-lg" style="color: #000000"></i>
+          <h3>90 days return</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-dollar-sign fa-lg" style="color: #000000"></i>
+          <h3>Money guarantee</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-credit-card fa-lg" style="color: #000000"></i>
+          <h3>Flexible payment</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-shield-halved fa-lg" style="color: #000000"></i>
+          <h3>Secure checkout</h3>
+          <p>Lorem, ipsum dolor.</p>
+        </div>
+      </div>
+      <!-- FOOTER -->
+      <footer class="bg-light py-5">
+        <div class="container">
+          <div class="row justify-lg-content-center">
+            <div class="col-lg-2 col-sm-6 my-2">
+              <h6>MY ACCOUNT</h6>
+              <ul>
+                <li class="my-2">My account</li>
+                <li class="my-2">My cart</li>
+                <li class="my-2">Wishlist</li>
+                <li class="my-2">Order history</li>
+                <li class="my-2">Return policy</li>
+              </ul>
+            </div>
+
+            <div class="my-2 col-lg-2 col-sm-6">
+              <h6>OUR LEGAL</h6>
+              <ul>
+                <li class="my-2">Terms & condition</li>
+                <li class="my-2">Accessibility</li>
+                <li class="my-2">About us</li>
+                <li class="my-2">Track order</li>
+                <li class="my-2">Store location</li>
+              </ul>
+            </div>
+            <div class="my-2 col-lg-2 col-sm-6">
+              <h6>INFORMATION</h6>
+              <ul>
+                <li class="my-2">Our story</li>
+                <li class="my-2">Keep in touch</li>
+                <li class="my-2">Privacy policy</li>
+                <li class="my-2">Refund policy</li>
+                <li class="my-2">Faq's</li>
+              </ul>
+            </div>
+            <div class="my-2 col-lg-2 col-sm-6">
+              <h6>CONTACT US</h6>
+              <ul>
+                <li class="my-2">+1234 567 890</li>
+                <li class="my-2">info@domain.com</li>
+                <li class="my-2">We're located in Australia</li>
+                <li class="my-2">Custom care hours</li>
+                <li class="my-2">3:00 PM - 11:30 PM</li>
+              </ul>
+            </div>
+            <div class="my-2 col-lg-3 col-sm-6">
+              <h6>OUR INSTAGRAM</h6>
+              <div class="row gy-3">
+                <div class="col-4">
+                  <img
+                    src="../images/marbo-lyfestyle-instagram-images-01_0554be35-9f59-46ea-aa5f-6f5d58a2d698.jpg"
+                    class="w-100"
+                    alt="instgram-1"
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    src="../images/marbo-lyfestyle-instagram-images-02_ff4a7a24-58d4-4ee4-bec3-a9d2d98929ee.jpg"
+                    class="w-100"
+                    alt="instgram-2"
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    src="../images/marbo-lyfestyle-instagram-images-03_df0babb4-0180-40d0-a0cd-570f054c4539.jpg"
+                    class="w-100"
+                    alt="instgram-3"
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    src="../images/marbo-lyfestyle-instagram-images-04_24380b1d-4fa0-4a6e-b6d2-ea94217b8b82.jpg"
+                    class="w-100"
+                    alt="instgram-4"
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    src="../images/marbo-lyfestyle-instagram-images-05_49c9fb27-6c9e-4e57-a68c-ea545521d282.jpg"
+                    class="w-100"
+                    alt="instgram-5"
+                  />
+                </div>
+                <div class="col-4">
+                  <img
+                    src="../images/marbo-lyfestyle-instagram-images-06_28ccd17f-1f61-4db6-a88d-21fa6b780a1d.jpg"
+                    class="w-100"
+                    alt="instgram-6"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
