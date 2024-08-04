@@ -248,14 +248,14 @@ a {
   color: #ffffff;
   font-size: 19px;
   padding: 16px;
-  background-color: #475476;
+  background-color: #222222;
   font-weight: 600;
   border: none;
   border-radius: 5px;
 }
 
 .btn-comp:hover {
-  background-color: rgb(51, 61, 87);
+  background-color: #555555;
 }
 
 .codes {
