@@ -98,7 +98,9 @@ document.addEventListener("DOMContentLoaded", () => {
   discountButton.addEventListener("click", applyDiscount);
 
   // Function to apply a discount code
-  function applyDiscount() {
+  function applyDiscount(e) {
+    e.preventDefault();
+
     const discountInput = document.querySelector(".discount-txt");
     const discountCode = discountInput.value.trim().toLowerCase();
     const discountPercent = discountCodes[discountCode] || 0;
@@ -107,11 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const discountVal = document.querySelector(".disc-num");
 
-    if (discountPercent > 0) {
-      discountVal.textContent = `$${discountAmount.toFixed(2)} USD`;
-    } else {
-      discountVal.textContent = `invalid discount code`;
-    }
+    discountVal.textContent = `Loading...`;
+
+    setTimeout(() => {
+      // Simulate loading time
+      if (discountPercent > 0) {
+        discountVal.textContent = `$${discountAmount.toFixed(2)} USD`;
+      } else {
+        discountVal.textContent = `invalid discount code`;
+      }
+    }, 500); // Simulate a delay
   }
 
   // Function to update item quantity
@@ -156,7 +163,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Shipping address calculation in the summary section
 
-  const updateShippingCost = () => {
+  const updateShippingCost = (e) => {
+    e.preventDefault();
     const countryInput = document.getElementById("country");
     const shippingCountry = document.querySelector(".shipping-num");
 
