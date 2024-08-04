@@ -39,7 +39,6 @@ async function getData() {
     try {
         const response = await fetch("https://dummyjson.com/products/category/womens-bags")
         const data = await response.json();
-        console.log(data.products);
         showData(data.products)
 
     } catch (error) {
@@ -52,7 +51,12 @@ const productList = document.getElementById('products')
 function showData(data) {
     for (let i = 1; i < data.length; i++) {
         const productElement = document.createElement('div')
-        productElement.classList.add( 'product', 'col-md-3','col-sm-6')
+        productElement.classList.add('product', 'col-md-3', 'col-sm-6')
+        // To get details
+        productElement.addEventListener("click", () => {
+            const productId = data[i].id;  
+            redirectToDetail(productId);
+        });
         productElement.innerHTML = `
             <img src="${data[i].images[0]}" alt="${data[i].title}" class="product-img-main w-100" ">  
     <img src="${data[i].images[1] || e.images[0]}" alt="${data[i].title}" class="product-img-next w-100" ">  
@@ -71,10 +75,12 @@ function showData(data) {
     </div>`
         productList.appendChild(productElement)
     }
-console.log(data);
-
-
 }
-// }
+
+
 getData();
 
+// redirect to product detail page with the product ID
+function redirectToDetail(productId) {
+    window.location.href = `/html/product-detail.html?id=${productId}`;
+}
