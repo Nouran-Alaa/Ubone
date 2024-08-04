@@ -20,7 +20,7 @@ a {
 
 .cart-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
-    url("../Images/cart_bg.jpg");
+    url("../images/cart_bg.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

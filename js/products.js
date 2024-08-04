@@ -304,6 +304,37 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+document.addEventListener("DOMContentLoaded", () => {
+  const sortSelect = document.getElementById("sort");
+
+  sortSelect.addEventListener("change", (event) => {
+    const sortValue = event.target.value;
+    sortProducts(sortValue);
+    displayProducts(currentPage);
+    setupPagination();
+  });
+});
+
+function sortProducts(sortBy) {
+  switch (sortBy) {
+    case "az":
+      products.sort((a, b) => a.title.localeCompare(b.title));
+      break;
+    case "za":
+      products.sort((a, b) => b.title.localeCompare(a.title));
+      break;
+    case "low-high":
+      products.sort((a, b) => a.price - b.price);
+      break;
+    case "high-low":
+      products.sort((a, b) => b.price - a.price);
+      break;
+    default:
+      break;
+  }
+}
+
 ///////////////
 function setupPagination() {
   const pagination = document.querySelector(".pagination");

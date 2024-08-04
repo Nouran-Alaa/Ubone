@@ -821,7 +821,8 @@ aside {
 }
 /* ///////////////////// */
 /* NAVBAR */
-.navbar {
+
+/* .navbar {
   border-top: 1px solid #ddd;
   width: 100vw;
   display: flex;
@@ -961,10 +962,10 @@ aside {
   color: black;
   text-decoration: none;
   font-size: 1.8rem;
-}
+} */
 
 /* Media Queries*/
-@media (max-width: 930px) {
+/* @media (max-width: 930px) {
   .nav-links {
     display: none;
   }
@@ -978,7 +979,7 @@ aside {
   .mobile-menu.active {
     left: 0;
   }
-}
+} */
 
 /*  */
 .static-text {
