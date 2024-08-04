@@ -246,7 +246,6 @@ function showQuickViewModal(productId) {
       image.style.display = "none";
     }
   });
-
   document.getElementById("modalTitle").innerText = product.title;
   document.getElementById("modalPrice").innerText = `$${(
     product.price -
