@@ -10,11 +10,29 @@ window.addEventListener('scroll', function() {
         navbar.classList.add('static')
     }
 })
+
+const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+const cartCounterElement = document.querySelector(".cart-counter");
+function updateCartCounter() {
+  const cartCounterElement = document.querySelector(".cart-counter");
+  if (cartCounterElement) {
+    cartCounterElement.textContent = userCart.reduce(
+      (acc, curr) => acc + curr.quantity,
+      0
+    );
+  }
+}
+function updateWishlistCounter() {
+  let userWishList = JSON.parse(sessionStorage.getItem("userWishList")) || [];
+  const wishlistCounterElement = document.querySelector(".wishlist-counter");
+  if (wishlistCounterElement) {
+    wishlistCounterElement.textContent = userWishList.reduce(
+      (acc, curr) => acc + curr.wishlist,
+      0
+    );
+  }
+}
 document.addEventListener("DOMContentLoaded", () => {
-    const cartCounterElement = document.querySelector(".cart-counter");
-    const storedCartCounter = sessionStorage.getItem("cartCounter");
-    if (storedCartCounter !== null) {
-      cartCounterElement.textContent = storedCartCounter;
-    }
-  });
-  sessionStorage.setItem("cartCounter", cartCounterElement.textContent);
+  console.log("DOM fully loaded and parsed");
+  updateWishlistCounter();
+});
