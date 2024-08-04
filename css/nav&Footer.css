@@ -26,13 +26,34 @@ nav {
 }
 
 nav .active {
-  border-bottom: solid 3px rgb(71, 84, 118);
-  color: rgb(71, 84, 118) !important;
+  border-bottom: solid 3px black;
+  color: black !important;
   font-weight: 500;
 }
 
 nav li:hover .nav-link {
+  border-bottom: solid 3px RGB(71, 84, 118);
   color: RGB(71, 84, 118) !important;
+}
+.navbar-nav:last-child {
+  gap: 1rem;
+}
+.nav-item {
+  display: flex;
+  justify-content: center;
+}
+.nav-icons {
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-icons span {
+  color: black;
+  font-size: 1.6rem;
+  font-weight: bold;
 }
 
 /*------------------------ Footer ------------------------------- */
