@@ -82,8 +82,9 @@
             <div class="shipping-bar">
                 <p class="shipping-text">SPEND $20.00 MORE AND GET FREE SHIPPING!</p>
                 <div class="progress">
-                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%"></div>
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
                 </div>
+                <div class="progress-circle"><i class="fa-solid fa-truck"></i></div>
             </div>
 
             <!-- Products -->
@@ -256,7 +257,7 @@
                 </div>
                 <div class="return-shop">
                     <button class="btn btn-lg btn-txt">
-                        <span>Return To Store</span>
+                        <a href="products.html">Return To Store</a>
                     </button>
                 </div>
               </div>
@@ -291,17 +292,17 @@
                     <div class="cart-actions">
                         <form action="">
                             <div>
-                                <label for="" class="text-muted">Country</label>
-                                <input type="text" class="form-control" placeholder="Enter Country" />
+                                <label for="" class="text-muted fw-medium">Country</label>
+                                <input type="text" id="country" class="form-control" placeholder="Enter Country" />
                             </div>
                             <div>
-                                <label for="" class="text-muted">Postal/Zip code</label>
+                                <label for="" class="text-muted fw-medium">Postal/Zip code</label>
                                 <input type="text" class="form-control" placeholder="Zip/Postal Code" />
                             </div>
                             
                             <!-- Calculate Button -->
                             <div class="text-center mt-2 mt-sm-0">
-                                <button class="btn btn-lg btn-txt w-100">
+                                <button class="btn btn-lg btn-txt w-100" id="calc-btn">
                                     <span>Calculate Shipping</span>
                                 </button>
                             </div>
@@ -315,7 +316,15 @@
                                 <span class="total-txt">Subtotal</span>
                                 <span class="total-num">$98.00 USD</span>
                             </div>
-                            <p class="text-muted">Taxes and shipping calculated at checkout</p>
+                            <div class="s-total">
+                              <span class="disc-ship">Discount</span>
+                              <span class="disc-num">$00.00 USD</span>
+                          </div>
+                          <div class="s-total">
+                            <span class="disc-ship">Shipping</span>
+                            <span class="shipping-num">$00.00 USD</span>
+                        </div>
+                            <p class="text-muted fw-bold">Taxes and shipping calculated at checkout</p>
                         </div>
                         <div class="checkout-btn text-center">
                             <button class="btn btn-lg btn-txt w-100">

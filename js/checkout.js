@@ -269,7 +269,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Shipping addresse calculation in the summary section
+  // Shipping address calculation in the summary section
 
   const deliveryAddressSpan = document.getElementById("delivery-address");
   const totalAmountSpan = document.getElementById("total-amount");
@@ -285,13 +285,17 @@ document.addEventListener("DOMContentLoaded", function () {
         deliveryAddressSpan.innerText = "Loading...";
         setTimeout(() => {
           // Simulate loading time
-          if (address === "Cairo") {
+          if (address === "Cairo" || address === "cairo") {
             deliveryAddressSpan.innerText = "$30.00";
             totalAmountSpan.innerText = "$128.00"; // subtotal + Cairo shipping cost
-          } else if (address === "Giza") {
+          } else if (address === "Giza" || address === "giza") {
             deliveryAddressSpan.innerText = "$20.00";
             totalAmountSpan.innerText = "$118.00"; // subtotal + Giza shipping cost
-          } else if (address === "Alexandria" || address === "Alex") {
+          } else if (
+            address === "Alexandria" ||
+            address === "Alex" ||
+            address === "alex"
+          ) {
             deliveryAddressSpan.innerText = "$50.00";
             totalAmountSpan.innerText = "$148.00"; // subtotal + Alex shipping cost
           } else {
@@ -351,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                         <div class="cart-item-totals py-2">
                           <div class="item-price">
-                            <span class="heading">${itemTotal}</span>
+                            <span class="heading">$ ${itemTotal}</span>
                           </div>
                         </div>
                       </div>`;

@@ -14,6 +14,10 @@ a {
   color: white;
 }
 
+.navbar-scrolled {
+  background-color: #e6dfd7 !important;
+}
+
 .cart-bg {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
     url("../Images/cart_bg.jpg");
@@ -27,6 +31,7 @@ a {
   gap: 8px;
   padding-top: 40px;
   padding-bottom: 40px;
+  margin-top: 48px;
 }
 
 header h2 {
@@ -51,6 +56,9 @@ header h6 {
   flex-direction: column;
   gap: 30px;
   text-align: start;
+  position: sticky;
+  top: 20px; /* Adjust this value to your needs */
+  z-index: 100; /* Ensures it stays above other content */
 }
 
 .card {
@@ -65,6 +73,8 @@ header h6 {
 
 .fs-18 {
   font-size: 18px;
+  color: black;
+  font-weight: 600;
 }
 
 form {
@@ -79,7 +89,7 @@ form {
   padding: 15px 35px;
   background-color: #222222;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
   border-radius: 0px;
   letter-spacing: 0px;
@@ -111,6 +121,16 @@ form {
   align-items: center;
 }
 
+.disc-ship {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.disc-num,
+.shipping-num {
+  font-size: 15px;
+}
+
 .total-txt {
   font-size: 18px;
   font-weight: 600;
@@ -140,22 +160,29 @@ form {
 
 .progress {
   height: 8px;
+  position: relative;
 }
 
 .progress-bar {
   background-color: #475476;
 }
 
-.progress-bar::after {
-  content: "";
+.progress-circle {
+  content: "\e9e8";
   position: absolute;
-  right: 70px;
-  background-color: #475476;
-  height: 30px;
+  top: 46%;
+  transform: translateY(-50%);
+  background-color: #475476; /* Light orange color */
+  height: 30px; /* Adjust the circle size as needed */
   width: 30px;
   border-radius: 50%;
-
-  inset-inline-start: calc(var(80%) - 30px);
+  margin-left: -15px; /* Adjust based on the circle's size */
+  transition: 0.8s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 12px;
 }
 
 .shipping-text {
@@ -293,7 +320,16 @@ input:disabled {
 ::placeholder {
   color: #29282899;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.discount-txt::placeholder,
+textarea::placeholder {
+  color: #29282899;
+  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
 }
 
 .gift-icon {

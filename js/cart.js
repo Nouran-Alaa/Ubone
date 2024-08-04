@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
                           </div>
                           <div class="item-info ps-4 w-100">
                               <div class="item-title">
-                                  <h6>${item.title}</h6>
+                                  <h6 class="fw-semibold">${item.title}</h6>
                               </div>
                               <div class="item-price pb-2">
-                                  <span class="heading">${item.price}</span>
+                                  <span class="heading">$${item.price}</span>
                               </div>
                               
                           </div>
@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let subtotalval = 0;
 
-  // Function to update subtotal
+  // Function to update subtotal and progress bar
   function updateSubtotal() {
     const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
     const subtotal = userCart.reduce(
@@ -67,6 +67,27 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".total-num").textContent = `$${subtotal.toFixed(
       2
     )} USD`;
+
+    if (subtotal <= 100) {
+      document.querySelector(".shipping-text").textContent = `SPEND $${(
+        100 - subtotal
+      ).toFixed(2)} MORE AND GET FREE SHIPPING!`;
+    } else {
+      document.querySelector(
+        ".shipping-text"
+      ).textContent = `Congratulations , you've got free shipping!`;
+    }
+
+    // increase progress bar size when subtotal increases
+    const progressBar = document.querySelector(".progress-bar");
+    const progressCircle = document.querySelector(".progress-circle");
+
+    // Ensure the width does not exceed 100%
+    const calculatedWidth = Math.min(subtotal, 100);
+    progressBar.style.width = `${calculatedWidth}%`;
+
+    // Move the circle to the edge of the progress bar
+    progressCircle.style.left = `${calculatedWidth}%`;
 
     subtotalval = subtotal;
   }
@@ -84,21 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const subtotal = subtotalval;
     const discountAmount = (subtotal * discountPercent) / 100;
 
-    const discountBody = document.querySelector("sub-total");
+    const discountVal = document.querySelector(".disc-num");
 
-    let disCode = 0;
     if (discountPercent > 0) {
-      disCode = `${discountAmount} USD`;
+      discountVal.textContent = `$${discountAmount.toFixed(2)} USD`;
     } else {
-      disCode = `Invalid discount code`;
+      discountVal.textContent = `invalid discount code`;
     }
-
-    const discountHtml = `<div class="s-total">
-                                <span class="total-txt">Discount</span>
-                                <span class="total-num">${disCode}</span>
-                            </div>`;
-
-    discountBody.appendChild(discountHtml);
   }
 
   // Function to update item quantity
@@ -140,6 +153,42 @@ document.addEventListener("DOMContentLoaded", () => {
       deleteCartItem(index);
     }
   });
+
+  // Shipping address calculation in the summary section
+
+  const updateShippingCost = () => {
+    const countryInput = document.getElementById("country");
+    const shippingCountry = document.querySelector(".shipping-num");
+
+    if (countryInput) {
+      const address = countryInput.value.trim();
+      if (address === "") {
+        shippingCountry.innerText = "Enter shipping Country";
+      } else {
+        shippingCountry.innerText = "Loading...";
+        setTimeout(() => {
+          // Simulate loading time
+          if (address === "Cairo" || address === "cairo") {
+            shippingCountry.innerText = "$30.00 USD";
+          } else if (address === "Giza" || address === "giza") {
+            shippingCountry.innerText = "$20.00 USD";
+          } else if (
+            address === "Alexandria" ||
+            address === "Alex" ||
+            address === "alexa"
+          ) {
+            shippingCountry.innerText = "$50.00 USD";
+          } else {
+            shippingCountry.innerText = "Country not recognized";
+          }
+        }, 500); // Simulate a delay
+      }
+    }
+  };
+
+  // Add event listener to calculate shipping button
+  const calcBtn = document.getElementById("calc-btn");
+  calcBtn.addEventListener("click", updateShippingCost);
 
   // Initial render of the cart
   renderCart();
