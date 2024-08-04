@@ -10,6 +10,9 @@ window.addEventListener('scroll', function() {
         navbar.classList.add('static')
     }
 })
+
+const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+const cartCounterElement = document.querySelector(".cart-counter");
 function updateCartCounter() {
   const cartCounterElement = document.querySelector(".cart-counter");
   if (cartCounterElement) {
