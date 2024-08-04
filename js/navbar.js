@@ -10,3 +10,11 @@ window.addEventListener('scroll', function() {
         navbar.classList.add('static')
     }
 })
+document.addEventListener("DOMContentLoaded", () => {
+    const cartCounterElement = document.querySelector(".cart-counter");
+    const storedCartCounter = sessionStorage.getItem("cartCounter");
+    if (storedCartCounter !== null) {
+      cartCounterElement.textContent = storedCartCounter;
+    }
+  });
+  sessionStorage.setItem("cartCounter", cartCounterElement.textContent);
