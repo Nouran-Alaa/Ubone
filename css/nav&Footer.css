@@ -56,6 +56,11 @@ nav li:hover .nav-link {
   font-weight: bold;
 }
 
+.small-icon-count {
+  font-size: 16px;
+  font-weight: 600;
+}
+
 /*------------------------ Footer ------------------------------- */
 footer h6 {
   color: #222;
@@ -91,8 +96,7 @@ footer ul li {
     box-shadow: 0 0 0 0;
   }
 
- 
-.active {
+  .active {
     margin: 0;
     border-bottom: rgba(34, 34, 34, 0.1) 1px solid;
     padding: 5px !important;
