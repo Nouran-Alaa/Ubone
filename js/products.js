@@ -303,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
     quantityInput.value = currentValue + 1;
   });
 });
+
 ///////////////
 function setupPagination() {
   const pagination = document.querySelector(".pagination");

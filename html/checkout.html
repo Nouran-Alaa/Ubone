@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/checkout.css" />
+    <link rel="stylesheet" href="../css/nav&Footer.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <title>Checkout</title>
+  </head>
+
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg static fixed-top py-1">
+      <div class="container-fluid">
+        <a class="navbar-brand d-flex" href="../index.html">
+          <img src="../images/logo-9.png" alt="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="../index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link" href="cart.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- main -->
+    <main>
+      <section class="border-bottom" style="height: 48px"></section>
+      <!-- Container -->
+      <section>
+        <div>
+          <div class="row p-0 m-0">
+            <!-- Left side of the container -->
+            <div class="left-col m-xl-0 p-0">
+              <div
+                class="p-4 row justify-content-lg-end justify-content-md-center justify-content-center"
+              >
+                <!-- Billing Form -->
+                <div class="info d-flex flex-column gap-3 py-2" id="myForm">
+                  <!-- Contact email -->
+                  <div class="contact">
+                    <h5>Contact</h5>
+
+                    <div class="form-floating mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="name@example.com"
+                      />
+                      <label for="email" class="text-muted"
+                        >Email or mobile phone number</label
+                      >
+                    </div>
+
+                    <div class="form-check mb-3">
+                      <input
+                        type="checkbox"
+                        class="form-check-input"
+                        id="check1"
+                      />
+                      <label class="form-check-label" for="check1"
+                        >Email me with news and offers</label
+                      >
+                    </div>
+                  </div>
+
+                  <!-- Shipping address -->
+                  <div class="delivery">
+                    <h5>Delivery</h5>
+
+                    <form class="row g-3">
+                      <div class="col-12">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="country"
+                            placeholder="Country / Region"
+                          />
+                          <label for="country" class="text-muted"
+                            >Country / Region</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="firstname"
+                            placeholder="First Name"
+                          />
+                          <label for="firstname" class="text-muted"
+                            >First Name</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-md-6">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="lastname"
+                            placeholder="Last Name"
+                          />
+                          <label for="lastname" class="text-muted"
+                            >Last Name</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-floating">
+                          <i class="fa-solid fa-magnifying-glass"></i>
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="address"
+                            placeholder="Address"
+                          />
+                          <label for="address" class="text-muted"
+                            >Address</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="suite"
+                            placeholder="Apartment, suite, etc. (optional)"
+                          />
+                          <label for="suite" class="text-muted"
+                            >Apartment, suite, etc. (optional)
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="city"
+                            placeholder="City"
+                          />
+                          <label for="city" class="text-muted">City </label>
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="state"
+                            placeholder="State"
+                          />
+                          <label for="state" class="text-muted">State </label>
+                        </div>
+                      </div>
+
+                      <div class="col-4">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="zipcode"
+                            placeholder="ZIP code"
+                            maxlength="5"
+                          />
+                          <label for="zipcode" class="text-muted"
+                            >ZIP code
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="check2"
+                            required
+                          />
+                          <label class="form-check-label" for="check2"
+                            >Save this information for next time</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-check">
+                          <input
+                            type="checkbox"
+                            class="form-check-input"
+                            id="check3"
+                            required
+                          />
+                          <label class="form-check-label" for="check3"
+                            >Text me with news and offers</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <div class="form-floating">
+                          <i class="bx bx-mobile-alt"></i>
+                          <input
+                            type="text"
+                            class="form-control mob-input"
+                            id="phone"
+                            placeholder="phone number"
+                          />
+                          <label for="phone" class="text-muted p-num"
+                            >Mobile phone number</label
+                          >
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <p class="text-muted xs-font fw-semibold">
+                          By signing up via text, you agree to receive recurring
+                          automated marketing messages, including cart
+                          reminders, at the phone number provided. Consent is
+                          not a condition of purchase. Reply STOP to
+                          unsubscribe. Reply HELP for help. Message frequency
+                          varies. Msg & data rates may apply. View our
+                          <a href="#">Privacy Policy</a> and
+                          <a href="#">Terms of Service</a>.
+                        </p>
+                      </div>
+                    </form>
+                  </div>
+
+                  <!-- Payment Method -->
+                  <div class="payment">
+                    <h5>Payment</h5>
+                    <p class="text-muted">
+                      All transactions are secure and encrypted.
+                    </p>
+
+                    <div
+                      class="accordion accordion-flush border cordion"
+                      id="paymentMethod"
+                    >
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseOne"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseOne"
+                          >
+                            <label for="radio1">
+                              <input
+                                type="radio"
+                                id="radio1"
+                                name="method"
+                                class="me-2"
+                              />
+                              Credit card
+                            </label>
+                          </button>
+                        </h2>
+                        <div
+                          id="flush-collapseOne"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingOne"
+                          data-bs-parent="#paymentMethod"
+                        >
+                          <div class="accordion-body cordion-bg">
+                            <form class="row g-3">
+                              <div class="col-12">
+                                <div class="form-floating">
+                                  <i class="bx bx-lock-alt"></i>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="card"
+                                    placeholder="Card Number"
+                                    maxlength="16"
+                                  />
+                                  <label for="card" class="text-muted"
+                                    >Card Number</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="date"
+                                    maxlength="6"
+                                    placeholder="MMYYYY"
+                                    pattern="[0-9]{2}/[0-9]{4}"
+                                  />
+
+                                  <label for="date" class="text-muted"
+                                    >Expiration date (MM/YYYY)</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                  <i class="bx bx-help-circle"></i>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="security"
+                                    placeholder="Security Code"
+                                    maxlength="4"
+                                  />
+                                  <label for="security" class="text-muted"
+                                    >Security Code</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-12">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="ncard"
+                                    placeholder="Name on Card"
+                                  />
+                                  <label for="ncard" class="text-muted"
+                                    >Name on Card
+                                  </label>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingTwo">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseTwo"
+                          >
+                            <label for="radio2">
+                              <input
+                                type="radio"
+                                id="radio2"
+                                name="method"
+                                class="me-2"
+                              />
+                              Cash on Delivery (COD)
+                            </label>
+                          </button>
+                        </h2>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingThree">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseThree"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseThree"
+                          >
+                            <label for="radio3">
+                              <input
+                                type="radio"
+                                id="radio3"
+                                name="method"
+                                class="me-2"
+                              />
+                              Bank Deposit
+                            </label>
+                          </button>
+                        </h2>
+                      </div>
+                    </div>
+
+                    <!-- Billing Address -->
+
+                    <h6 class="pb-2 pt-4 billing-font">Billing address</h6>
+
+                    <div
+                      class="accordion accordion-flush border cordion"
+                      id="billingaddress"
+                    >
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFour">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFour"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseFour"
+                          >
+                            <label for="radio4">
+                              <input
+                                type="radio"
+                                id="radio4"
+                                name="address"
+                                class="me-2"
+                              />
+                              <span>Same as shipping address</span>
+                              <span></span>
+                            </label>
+                          </button>
+                        </h2>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingFive">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#flush-collapseFive"
+                            aria-expanded="false"
+                            aria-controls="flush-collapseFive"
+                          >
+                            <label for="radio5">
+                              <input
+                                type="radio"
+                                id="radio5"
+                                name="address"
+                                class="me-2"
+                              />
+                              Use a different billing address
+                            </label>
+                          </button>
+                        </h2>
+                        <div
+                          id="flush-collapseFive"
+                          class="accordion-collapse collapse"
+                          aria-labelledby="flush-headingFive"
+                          data-bs-parent="#billingaddress"
+                        >
+                          <div class="accordion-body cordion-bg">
+                            <form class="row g-3">
+                              <div class="col-12">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="country2"
+                                    placeholder="Country / Region"
+                                  />
+                                  <label for="country2" class="text-muted"
+                                    >Country / Region</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="firstname2"
+                                    placeholder="First Name"
+                                  />
+                                  <label for="firstname2" class="text-muted"
+                                    >First Name</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-md-6">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="lastname2"
+                                    placeholder="Last Name"
+                                  />
+                                  <label for="lastname2" class="text-muted"
+                                    >Last Name</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-12">
+                                <div class="form-floating">
+                                  <i class="fa-solid fa-magnifying-glass"></i>
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="address2"
+                                    placeholder="Address"
+                                  />
+                                  <label for="address2" class="text-muted"
+                                    >Address</label
+                                  >
+                                </div>
+                              </div>
+
+                              <div class="col-12">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="suite2"
+                                    placeholder="Apartment, suite, etc. (optional)"
+                                  />
+                                  <label for="suite2" class="text-muted"
+                                    >Apartment, suite, etc. (optional)
+                                  </label>
+                                </div>
+                              </div>
+
+                              <div class="col-4">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="city2"
+                                    placeholder="City"
+                                  />
+                                  <label for="city2" class="text-muted"
+                                    >City
+                                  </label>
+                                </div>
+                              </div>
+
+                              <div class="col-4">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="state2"
+                                    placeholder="State"
+                                  />
+                                  <label for="state2" class="text-muted"
+                                    >State
+                                  </label>
+                                </div>
+                              </div>
+
+                              <div class="col-4">
+                                <div class="form-floating">
+                                  <input
+                                    type="text"
+                                    class="form-control"
+                                    id="zipCode2"
+                                    placeholder="ZIP code"
+                                  />
+                                  <label for="zipCode2" class="text-muted"
+                                    >ZIP code
+                                  </label>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Order Button -->
+                  <div class="complete border-bottom">
+                    <button
+                      class="btn btn-primary btn-comp w-100"
+                      id="submitBtn"
+                    >
+                      <span>Complete Order</span>
+                    </button>
+                  </div>
+
+                  <!-- Try and write this codes/addresses -->
+                  <div class="codes">
+                    <p>
+                      Discount codes: <span class="fw-bold">ubone-10</span> or
+                      <span class="fw-bold">ubone-20</span>
+                    </p>
+                    <p>
+                      Shipping Address: <span class="fw-bold">Cairo</span>,
+                      <span class="fw-bold">Giza</span> or
+                      <span class="fw-bold">Alex</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- end left side-->
+            </div>
+
+            <!-- Order Summary -->
+            <div class="right-col m-xl-0 summary border-start">
+              <div
+                class="row justify-content-lg-start justify-content-md-center justify-content-center"
+              >
+                <!-- products summary -->
+                <div class="prod">
+                  <!-- product items -->
+                  <div class="products">
+                    <div id="items-Summary" class="w-100">
+                      <!-- first item -->
+                      <div class="cart-item d-flex justify-content-between">
+                        <div class="item-media py-2">
+                          <div class="cart-image d-flex">
+                            <div class="card mycard">
+                              <div class="card-body p-0 div-img">
+                                <img
+                                  src="../images/shirt.jpg"
+                                  class="p-1"
+                                  alt="Blue heavy t-shirt"
+                                  loading="lazy"
+                                  width="60"
+                                  height="72"
+                                />
+                              </div>
+
+                              <div class="items-num">
+                                <div class="circle">2</div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="item-info ps-3 w-100 d-flex flex-column align-items-start justify-content-center"
+                            >
+                              <div class="item-title">
+                                <h6>Blue heavy t-shirt</h6>
+                              </div>
+                              <div
+                                class="item-option d-flex flex-column text-muted"
+                              >
+                                <span> S / Equator </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="cart-item-totals py-2">
+                          <div class="item-price">
+                            <span class="heading"> $44.00 </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- second item -->
+                      <div class="cart-item d-flex justify-content-between">
+                        <div class="item-media py-2">
+                          <div class="cart-image d-flex">
+                            <div class="card mycard">
+                              <div class="card-body p-0 div-img">
+                                <img
+                                  src="../images/sandals.jpg"
+                                  class="item-img p-1"
+                                  alt="Partywear shoes"
+                                  loading="lazy"
+                                  width="60"
+                                  height="72"
+                                />
+                              </div>
+
+                              <div class="items-num">
+                                <div class="circle">3</div>
+                              </div>
+                            </div>
+
+                            <div
+                              class="item-info ps-3 w-100 d-flex flex-column align-items-start justify-content-center"
+                            >
+                              <div class="item-title">
+                                <h6>Partywear shoes</h6>
+                              </div>
+                              <div
+                                class="item-option d-flex flex-column text-muted"
+                              >
+                                <span> S / Mercury </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="cart-item-totals py-2">
+                          <div class="item-price">
+                            <span class="heading"> $54.00 </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Discount Copoun & return -->
+                  <div class="discount d-flex justify-content-between">
+                    <div class="discount-code w-100">
+                      <input
+                        type="text"
+                        placeholder="Discount Code"
+                        class="discount-txt"
+                      />
+                    </div>
+                    <div class="apply">
+                      <button class="btn btn-lg btn-txt">
+                        <span>Apply</span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <!-- cost summary -->
+                  <div class="cost-summary d-flex flex-column gap-2">
+                    <p>subtotal: <span id="sub-total">$98.00</span></p>
+                    <p>discount: <span id="total-dis">$00.00</span></p>
+                    <p>
+                      delivery:
+                      <span id="delivery-address" class="text-muted"
+                        >Enter shipping address</span
+                      >
+                    </p>
+                    <p class="pt-1">
+                      <span class="lg-txt">total:</span>
+                      <span
+                        ><span class="text-muted">USD</span>
+                        <span id="total-amount" class="lg-txt"
+                          >$98.00</span
+                        ></span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+    </main>
+
+    <!-- Script -->
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/checkout.js"></script>
+    <script src="../js/navbar.js"></script>
+  </body>
+</html>

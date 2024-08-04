@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/nav&Footer.css" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&family=Yellowtail&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css"
+      integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc="
+      crossorigin="anonymous"
+    />
+
+    <title>Cart</title>
+  </head>
+
+  <body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg static fixed-top py-1">
+      <div class="container-fluid">
+          <a class="navbar-brand  d-flex " href="../index.html">
+              <img src="../images/logo-9.png" alt="logo">
+          </a>
+          <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="products.html">Products</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link" href="cart.html">
+                          <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+    <!-- Header -->
+    <header class="cart-bg">
+      <h6>HOME - SHOPPING CART</h4>
+      <h2>Shopping Cart</h2>
+    </header>
+
+    <main>
+        <!-- Cart -->
+      <section class="py-5">
+        <div class="container p-xl-5 p-lg-3">
+          <div class="row">
+
+            <!-- Order Details -->
+            <div
+              class="col-xl-9 col-lg-8 col-md-12 card bg-white mx-md-auto mb-md-5 pe-lg-4 pe-0 px-lg-1 px-md-0"
+            >
+
+            <!-- Shipping Bar -->
+            <div class="shipping-bar">
+                <p class="shipping-text">SPEND $20.00 MORE AND GET FREE SHIPPING!</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
+                </div>
+                <div class="progress-circle"><i class="fa-solid fa-truck"></i></div>
+            </div>
+
+            <!-- Products -->
+             <div class="cart-body-item">
+
+                <div class="products">
+
+                    <table class="w-100">
+                        <thead class="border-bottom">
+                          <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+
+                            <!-- first item -->
+                            <tr class="cart-item border-bottom">
+                              <td class="item-media py-4 col-7">
+                                <div class="cart-image d-flex">
+
+                                  <div>
+                                    <img src="../Images/shirt.jpg" class="item-img" alt="Blue heavy t-shirt" loading="lazy" width="100" height="130">
+                                  </div>
+
+                                  <div class="item-info ps-4 w-100">
+                                    <div class="item-title">
+                                        <h6>Blue heavy t-shirt</h6>
+                                    </div>
+                                    <div class="item-price pb-2">
+                                        <span class="heading">$22.00</span>
+                                    </div>
+                                    <div class="item-option d-flex flex-column">
+                                        <span class="pb-2">
+                                            <span class="heading">Size:</span>
+                                            S
+                                        </span>
+                                        <span>
+                                            <span class="heading">Color:</span>
+                                            Equator
+                                        </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </td>
+
+                              <td class="item-quantity py-4 col-3">
+                                <div class="d-flex align-items-center gap-3">
+                                  <div class="qty">
+                                      <span class="minus"><i class='bx bx-minus'></i></span>
+                                      <input
+                                        type="number"
+                                        class="count"
+                                        name="qty"
+                                        value="2"
+                                      />
+                                      <span class="plus"><i class='bx bx-plus'></i></span>
+                                  </div>
+
+                                <div class="trash-icon">
+                                      <a href="#" class="text-muted px-1">
+                                        <i class='bx bx-trash trash-color'></i>
+                                      </a>
+                                </div>
+                              </div>
+                                
+                              </td>
+
+                              <td class="cart-item-totals py-4 col-2">
+                                <div class="item-price">
+                                    <span class="heading">
+                                    $44.00
+                                  </span>
+                                </div>
+                                </td>
+                            </tr>
+
+                            <!-- second item -->
+                            <tr class="cart-item border-bottom">
+                                <td class="item-media py-4 col-7">
+                                  <div class="cart-image d-flex">
+  
+                                    <div>
+                                      <img src="../Images/sandals.jpg" class="item-img" alt="Partywear shoes" loading="lazy" width="100" height="130">
+                                    </div>
+  
+                                    <div class="item-info ps-4 w-100">
+                                      <div class="item-title">
+                                          <h6>Partywear shoes</h6>
+                                      </div>
+                                      <div class="item-price pb-2">
+                                          <span class="heading">$18.00</span>
+                                      </div>
+                                      <div class="item-option d-flex flex-column">
+                                          <span class="pb-2">
+                                              <span class="heading">Size:</span>
+                                              S
+                                          </span>
+                                          <span>
+                                              <span class="heading">Color:</span>
+                                              Mercury
+                                          </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+  
+                                <td class="item-quantity py-4 col-3">
+                                  <div class="d-flex align-items-center gap-3">
+                                      <div class="qty">
+                                          <span class="minus"><i class='bx bx-minus'></i></span>
+                                          <input
+                                            type="number"
+                                            class="count"
+                                            name="qty"
+                                            value="3"
+                                          />
+                                          <span class="plus"><i class='bx bx-plus'></i></span>
+                                      </div>
+  
+                                    <div class="trash-icon">
+                                      
+                                          <a href="#" class="text-muted px-1">
+                                            <i class='bx bx-trash trash-color'></i>
+                                          </a>
+                                        
+                                    </div>
+                                  </div>
+                                </td>
+
+                                <td class="cart-item-totals py-4 col-2">
+                                  <div class="item-price">
+                                      <span class="heading">
+                                      $54.00
+                                    </span>
+                                  </div>
+                                  </td>
+                              </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+             </div>
+
+             <!-- Discount Copoun & return -->
+              <div class="discount d-flex justify-content-between flex-lg-row flex-column">
+                <div class="discount-code">
+                    <span>
+                      <i class='bx bx-gift gift-icon'></i>
+                    </span>
+                    <input
+                        type="text"
+                        placeholder="Discount Code"
+                        class="w-50 discount-txt"
+                      />
+                      <i class='bx bx-gift gift-icon'></i>
+
+                    <button
+                        class="btn btn-outline-secondary apply"
+                        type="button">
+                        <i class='bx bx-right-arrow-alt discount-icon'></i>
+                    </button>
+                    
+                </div>
+                <div class="return-shop">
+                    <button class="btn btn-lg btn-txt">
+                        <a href="products.html">Return To Store</a>
+                    </button>
+                </div>
+              </div>
+
+              <!-- Order Notes -->
+              <div class="notes">
+                <h6 class="h-note">
+                    Order special instructions
+                </h6>
+                <textarea
+                  placeholder="Order Notes (optional)"
+                ></textarea>
+              </div>
+
+              <!-- end row-->
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-xl-3 col-lg-4 col-md-12 px-1">
+              <div class="mt-lg-0 mb-5">
+                <div class="card cart_list">
+
+                    <!-- Container start -->
+                  <div class="summary">
+
+                    <!-- Summary Title -->
+                    <h5 class="mb-0 fs-18">
+                        Get shipping estimates
+                    </h5>
+                    
+                    <!-- Calculate Shipping -->
+                    <div class="cart-actions">
+                        <form action="">
+                            <div>
+                                <label for="country" class="text-muted fw-medium">Country</label>
+                                <input type="text" id="country" class="form-control" placeholder="Enter Country" />
+                            </div>
+                            <div>
+                                <label for="zipcode" class="text-muted fw-medium">Postal/Zip code</label>
+                                <input type="text" id="zipcode" class="form-control" placeholder="Zip/Postal Code" />
+                            </div>
+                            
+                            <!-- Calculate Button -->
+                            <div class="text-center mt-2 mt-sm-0">
+                                <button class="btn btn-lg btn-txt w-100" id="calc-btn">
+                                    <span>Calculate Shipping</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Total and Checkout -->
+                    <div class="cart-block">
+                        <div class="sub-total border-bottom">
+                            <div class="s-total">
+                                <span class="total-txt">Subtotal</span>
+                                <span class="total-num">$98.00 USD</span>
+                            </div>
+                            <div class="s-total">
+                              <span class="disc-ship">Discount</span>
+                              <span class="disc-num">$00.00 USD</span>
+                          </div>
+                          <div class="s-total">
+                            <span class="disc-ship">Shipping</span>
+                            <span class="shipping-num">$00.00 USD</span>
+                        </div>
+                            <p class="text-muted fw-bold">Taxes and shipping calculated at checkout</p>
+                        </div>
+                        <div class="checkout-btn text-center">
+                            <button class="btn btn-lg btn-txt w-100">
+                                <a href="checkout.html">Checkout</a>
+                            </button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-light py-5">
+      <div class="container ">
+          <di class="row justify-lg-content-center">
+              <div class="col-lg-2 col-sm-6 my-2">
+
+                  <h6>MY ACCOUNT</h6>
+                  <ul>
+                      <li class="my-2">My account</li>
+                      <li class="my-2">My cart</li>
+                      <li class="my-2">Wishlist</li>
+                      <li class="my-2">Order history</li>
+                      <li class="my-2">Return policy</li>
+
+                  </ul>
+              </div>
+
+              <div class="my-2 col-lg-2 col-sm-6">
+                  <h6> OUR LEGAL</h6>
+                  <ul>
+                      <li class="my-2"> Terms & condition</li>
+                      <li class="my-2"> Accessibility</li>
+                      <li class="my-2">About us</li>
+                      <li class="my-2"> Track order </li>
+                      <li class="my-2"> Store location </li>
+                  </ul>
+              </div>
+              <div class="my-2 col-lg-2 col-sm-6">
+                  <h6>INFORMATION</h6>
+                  <ul>
+                      <li class="my-2"> Our story</li>
+                      <li class="my-2"> Keep in touch</li>
+                      <li class="my-2"> Privacy policy</li>
+                      <li class="my-2"> Refund policy</li>
+                      <li class="my-2"> Faq's</li>
+                  </ul>
+              </div>
+              <div class="my-2 col-lg-2 col-sm-6">
+                  <h6>CONTACT US</h6>
+                  <ul>
+                      <li class="my-2"> +1234 567 890</li>
+                      <li class="my-2">info@domain.com</li>
+                      <li class="my-2"> We're located in Australia</li>
+                      <li class="my-2"> Custom care hours</li>
+                      <li class="my-2"> 3:00 PM - 11:30 PM</li>
+                  </ul>
+              </div>
+              <div class="my-2 col-lg-3 col-sm-6">
+                  <h6> OUR INSTAGRAM </h6>
+                  <div class="row gy-3">
+                      <div class="col-4">
+                          <img src="../images/marbo-lyfestyle-instagram-images-01_0554be35-9f59-46ea-aa5f-6f5d58a2d698.jpg"
+                              class="w-100" alt="instgram-1">
+                      </div>
+                      <div class="col-4">
+                          <img src="../images/marbo-lyfestyle-instagram-images-02_ff4a7a24-58d4-4ee4-bec3-a9d2d98929ee.jpg"
+                              class="w-100" alt="instgram-2">
+                      </div>
+                      <div class="col-4">
+                          <img src="../images/marbo-lyfestyle-instagram-images-03_df0babb4-0180-40d0-a0cd-570f054c4539.jpg"
+                              class="w-100" alt="instgram-3">
+                      </div>
+                      <div class="col-4">
+                          <img src="../images/marbo-lyfestyle-instagram-images-04_24380b1d-4fa0-4a6e-b6d2-ea94217b8b82.jpg"
+                              class="w-100" alt="instgram-4">
+                      </div>
+                      <div class="col-4">
+                          <img src="../images/marbo-lyfestyle-instagram-images-05_49c9fb27-6c9e-4e57-a68c-ea545521d282.jpg"
+                              class="w-100" alt="instgram-5">
+                      </div>
+                      <div class="col-4">
+                          <img src="../images/marbo-lyfestyle-instagram-images-06_28ccd17f-1f61-4db6-a88d-21fa6b780a1d.jpg"
+                              class="w-100" alt="instgram-6">
+                      </div>
+                  </div>
+
+
+              </div>
+      </div>
+      </div>
+
+  </footer>
+  
+
+    <script src="../js/cart.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/navbar.js"></script>
+  </body>
+</html>
