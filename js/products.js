@@ -27,11 +27,10 @@ async function fetchProducts() {
       fetch(url).then((response) => response.json())
     );
     const dataArrays = await Promise.all(fetchPromises);
-    console.log("Fetched data arrays:", dataArrays);
+  
 
     // Combine all data arrays into a single array
     const allProducts = dataArrays.flatMap((data) => data.products);
-    console.log("Combined product list:", allProducts);
 
     // Process and display products
     products = allProducts;
@@ -144,7 +143,7 @@ function displayProducts(page) {
         }
       }
 
-      console.log(userCart);
+     
       // Update the cart counter and save to sessionStorage
       cartCounterElement.textContent = userCart.reduce(
         (acc, curr) => acc + curr.quantity,
@@ -177,7 +176,7 @@ function displayProducts(page) {
           userWishList.push(productAddToWishlist);
         }
       }
-      console.log(userWishList);
+  
       // Update the wishlist counter and save to sessionStorage
       wishlistCounterElement.textContent = userWishList.reduce(
         (acc, curr) => acc + curr.wishlist,
@@ -213,7 +212,7 @@ function showQuickViewModal(productId) {
     console.error("Product not found for ID:", productId);
     return;
   }
-  console.log(product);
+  
 
   const modalQuantityBtn = document.querySelector(".add-Cart-btn-m");
   const quantityValue = document.querySelector("#quantityInput");
@@ -226,9 +225,9 @@ function showQuickViewModal(productId) {
       }
       return userCart;
     }
-    console.log("clicked");
+   
     repeatProduct(product, +quantityValue.value);
-    console.log(userCart);
+   
     cartCounterElement.textContent = userCart.reduce(
       (acc, curr) => acc + curr.quantity,
       0
