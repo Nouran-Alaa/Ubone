@@ -384,3 +384,24 @@ textarea {
   border-radius: 0;
   width: 100%;
 }
+
+/* Featur */
+.featur-section {
+  border-bottom: rgba(34, 34, 34, 0.1) 1px solid;
+}
+
+.featur h6 {
+  font-weight: 600;
+  margin: 2rem 0 5px;
+  color: var(--main-color);
+}
+
+.featur span {
+  font-weight: 500;
+  color: #636363;
+}
+
+.featur i:hover {
+  color: #555555;
+  cursor: pointer;
+}

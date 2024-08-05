@@ -74,10 +74,16 @@ nav li:hover .nav-icon,
 }
 
 /*------------------------ Footer ------------------------------- */
+
 footer h6 {
   color: #222;
   font-weight: 600;
   font-size: 16px;
+}
+
+footer h6:hover {
+  color: #555555;
+  cursor: pointer;
 }
 
 footer ul {
@@ -89,6 +95,14 @@ footer ul {
 
 footer ul li {
   font-size: 16px;
+}
+
+/* make the images in the footer scale when hovering */
+
+footer img:hover {
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+  cursor: pointer;
 }
 
 /* Portrait tablet to landscape and desktop */
