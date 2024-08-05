@@ -50,7 +50,7 @@ nav li:hover .nav-link {
   gap: 0.5rem;
 }
 .span-important {
-  font-size: 10px !important;
+  font-size: 13px !important;
 }
 .nav-icons span {
   color: black;
