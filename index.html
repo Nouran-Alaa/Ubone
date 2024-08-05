@@ -2,529 +2,465 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- AOS CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <!-- Slider CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-    <!-- Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@100..900&display=swap" rel="stylesheet">
-    <!-- Links css -->
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/product-card.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/nav&Footer.css">
-    <title>Ubone</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Detail</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    crossorigin="anonymous" />
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/nav&Footer.css">
+  <style>
+    .navbar {
+      background-color: #f5f5f623;
+    }
+
+    .line-through {
+      text-decoration: line-through;
+    }
+
+    .star-rating {
+      color: #ffd700;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 0.375rem;
+      transition: background-color 0.3s;
+    }
+
+    .btn i {
+      margin-right: 0.5rem;
+    }
+
+    .btn-cart {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    .btn-cart:hover {
+      background-color: #2563eb;
+    }
+
+    .btn-buy {
+      background-color: #f3f4f6;
+      color: #1f2937;
+    }
+
+    .btn-buy:hover {
+      background-color: #e5e7eb;
+    }
+
+  /* Add this media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    #product-images, .w-full, .md\:w-1\/2, .md\:pl-10 {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .pl-10 {
+      padding-left: 0;
+    }
+
+    .mr-4 {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .navbar-brand img {
+      width: 100px;
+    }
+
+    .bg-white {
+      padding: 1rem;
+    }
+
+    .flex {
+      flex-direction: column;
+    }
+
+    .btn-cart, .btn-buy {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Specific part for smaller screens */
+    .product-thumbnail img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 0.375rem;
+      margin-right: 0.5rem;
+    }
+
+    #product-images .flex {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .star-rating, .review-count {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .availability {
+      font-size: 0.875rem;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    #product-rating {
+      font-size: 0.84rem;
+    }
+
+    .rating-and-reviews-and-price {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    .product-description {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
+  </style>
 </head>
 
-<body>
-   <!-- navbar -->
-   <nav class="navbar navbar-expand-lg static fixed-top py-2">
+<body class="bg-gray-100">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg py-2">
     <div class="container-fluid">
-        <a class="navbar-brand  d-flex " href="#">
-            <img src="./images/logo-9.png" alt="logo">
-        </a>
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./html/products.html">Products</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-icon" href="./html/cart.html">
-                        <i
-                        class="fa-solid fa-cart-shopping "
-                      ></i>
-                      <span class="cart-counter small-icon-count">0</span>
-                    </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-icon" href="./html/wishlist.html">
-                        <i
-                        class="fa-solid fa-heart "
-                      ></i>
-                      <span class="wishlist-counter small-icon-count">0</span>       
-                    </a>
-
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand d-flex" href="../index.html">
+        <img src="../images/logo-9.png" alt="logo">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="products.html">Products</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-icon" href="cart.html">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="cart-counter small-icon-count">0</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-icon" href="wishlist.html">
+              <i class="fa-solid fa-heart"></i>
+              <span class="wishlist-counter small-icon-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-    <main>
-        <!-- Slider -->
-        <div id="slider1" class="owl-carousel">
-            <div class="">
-                <div class="slider-content container-fluid">
-                    <p data-aos="fade-right" data-aos-duration='500' data-aos-delay="600">DISCOVER COLLECTION</p>
-                    <h2 data-aos="fade-right" data-aos-duration='500' data-aos-delay="800">New women Fashion arrived.
-                    </h2>
-                    <a href="./html/products.html">
-                        <button class="collection-btn" data-aos="fade-right" data-aos-duration='500'
-                            data-aos-delay="1000">COLLECTION
-                            <i class="fa-solid fa-arrow-up-right-from-square ms-2 rounded-4"
-                                style="color: #ffffff;"></i>
-                        </button></a>
-                </div>
-                <img src="images/marbo-lyfestyle-slider-01.jpg" class="img-slider w-100" alt="img-slider-1"/>
-            </div>
-
-            <div class="position-relative ">
-                <div class="slider-content container">
-                    <p>IN A WORLD OF TRENDS</p>
-                    <h2>Fashion fade style is eternal.</h2>
-                    <button class="collection-btn">
-                        COLLECTION
-                        <i class="fa-solid fa-arrow-up-right-from-square ms-2 rounded-4" style="color: #ffffff;"></i>
-                    </button>
-                </div>
-                <img src="images/marbo-lyfestyle-slider-02.jpg" class="w-100" alt="img-slider-2"/>
-            </div>
+  <!-- Product Detail -->
+  <div class="container mx-auto mt-10">
+    <div class="bg-white p-10 rounded-lg shadow-lg flex">
+      <div id="product-images" class="w-1/2">
+        <img id="main-image" src="" alt="" class="w-full rounded-lg mb-4" />
+        <div class="flex">
+          <!-- Thumbnails will be injected here -->
         </div>
+      </div>
+      <div class="w-1/2 pl-10">
+        <h1 id="product-title" class="text-2xl font-bold"></h1>
+        <div class="rating-and-reviews-and-price flex items-center mt-2">
+          <div id="product-rating" class="star-rating text-lg flex"></div>
+          <p id="review-count" class="text-gray-600 ml-2"></p>
+        </div>
+        <div class="rating-and-reviews-and-price flex items-center mt-2">
+          <span id="old-price" class="text-gray-500 line-through mr-2"></span>
+          <span id="new-price" class="text-xl text-green-500 font-semibold"></span>
+        </div>
+        <div id="sale-timer" class="text-red-500 mt-2"></div>
+        <p id="product-availability" class="text-gray-600 mt-2"></p>
+        <p id="product-description" class="text-gray-700 mt-4"></p>
+        <div class="product-meta mt-4">
+          <p class="mt-2">
+            <strong>SKU:</strong> <span id="product-sku"></span>
+          </p>
+          <p class="mt-2">
+            <strong>Brand:</strong> <span id="product-brand"></span>
+          </p>
+        </div>
+        <div class="product-additional mt-4">
+          <p class="mt-2">
+            <strong>Weight:</strong> <span id="product-weight"></span>g
+          </p>
+          <p class="mt-2">
+            <strong>Dimensions:</strong> <span id="product-dimensions"></span>
+          </p>
+          <p class="mt-2">
+            <strong>Warranty:</strong> <span id="product-warranty"></span>
+          </p>
+          <p class="mt-2">
+            <strong>Shipping:</strong> <span id="product-shipping"></span>
+          </p>
+        </div>
+        <div class="flex mt-6">
+          <button class="btn btn-cart mr-4" onclick="addToCart()">
+            <i class="fas fa-shopping-cart"></i> Add to Cart
+          </button>
+          <button class="btn btn-buy" onclick="addToWishlist()">
+            <i class="fas fa-heart"></i> Add to Wishlist
+          </button>
+        </div>
+        <div id="product-reviews" class="mt-6">
+          <h2 class="text-lg font-bold">Reviews</h2>
+          <!-- Reviews will be injected here -->
+        </div>
+      </div>
+    </div>
+  </div>
 
-        <!-- offers -->
-        <section class="container-fluid my-5">
-            <div class="row justify-content-center  ">
-                <div class="col-lg-3 py-2 col-sm-6  offers-1 ">
-                    <div class="m-1 d-flex align-items-center">
-                        <h6>Latest shopping related <b class="offers">offers</b></h6>
-                    </div>
-                </div>
-                <div class="col-lg-3 py-2 col-sm-6 ">
-                    <div class="m-1  h-100 row align-items-center sale ">
-                        <div class="col-6 ">
-                            <h6>Season sale</h6>
-                            <p class="m-0">Popular collection</p>
-                        </div>
-                        <div class="text-end col-6 ">
-                            <button class=" collection-btn">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 py-2 col-sm-6 ">
-                    <div class="m-1  h-100 row align-items-center sale ">
-                        <div class="col-6 ">
-                            <h6>Hot under $100</h6>
-                            <p class="m-0">Trending this week</p>
-                        </div>
-                        <div class="text-end col-6 ">
-                            <button class=" collection-btn">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 py-2 col-sm-6 ">
-                    <div class="m-1  h-100 row align-items-center sale ">
-                        <div class="col-6 ">
-                            <h6>Flat 50% off</h6>
-                            <p class="m-0">Season collection</p>
-                        </div>
-                        <div class="text-end col-6 ">
-                            <button class=" collection-btn">SHOP NOW</button>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-
-        </section>
-
-        <!-- categories -->
-        <section class="container-fluid py-5 bg-light">
-            <header class="categories-header text-center mb-5 ">
-                <span>Follow the most popular trends</span>
-                <h2>Explore top categories</h2>
-            </header>
-            <div class="row categories-section justify-content-center">
-                <div class="col-lg-2 mx-lg-2 col-md-3 col-sm-6 my-2  ">
-                    <div class="position-relative category m-auto">
-                        <img src="images/marbo-lyfestyle-categories-01.jpg" class="img-category w-100" alt="shirts"/>
-                        <div class="shirts-category d-flex ">
-                            <div>
-                                <h6 class="m-0">SHIRT</h6>
-                                <span>12 Items</span>
-                            </div>
-                            <div class="d-flex align-items-center ms-auto">
-                                <div class="icon-holder-cantegory">
-                                    <i class="fa-solid fa-square-arrow-up-right ms-2 fa-lg"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 mx-lg-2  col-md-3 col-sm-6 my-2">
-                    <div class="position-relative category m-auto">
-                        <img src="images/marbo-lyfestyle-categories-02.jpg" class="img-category w-100" alt="shoes"/>
-                        <div class="shoes-category d-flex ">
-                            <div>
-                                <h6 class="m-0">SHOES</h6>
-                                <span>13 Items</span>
-                            </div>
-                            <div class="d-flex align-items-center ms-auto">
-                                <div class="icon-holder-cantegory">
-                                    <i class="fa-solid fa-square-arrow-up-right ms-2 fa-lg"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 mx-lg-2  col-md-3 col-sm-6 my-2  ">
-                    <div class="position-relative category m-auto">
-                        <img src="images/marbo-lyfestyle-categories-03.jpg" class="img-category w-100" alt="shirts"/>
-                        <div class="shirts-category d-flex ">
-                            <div>
-                                <h6 class="m-0">BAGS</h6>
-                                <span>10 Items</span>
-                            </div>
-                            <div class="d-flex align-items-center ms-auto">
-                                <div class="icon-holder-cantegory">
-                                    <i class="fa-solid fa-square-arrow-up-right ms-2 fa-lg"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-2 mx-lg-2 col-md-3 col-sm-6 my-2  ">
-                    <div class="position-relative category m-auto">
-                        <img src="images/marbo-lyfestyle-categories-04.png" class="img-category w-100" alt="shoes"/>
-                        <div class="shoes-category d-flex ">
-                            <div>
-                                <h6 class="m-0">GLASSES</h6>
-                                <span>9 Items</span>
-                            </div>
-                            <div class="d-flex align-items-center ms-auto">
-                                <div class="icon-holder-cantegory">
-                                    <i class="fa-solid fa-square-arrow-up-right ms-2 fa-lg"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- p Slider -->
-        <section class="ticker-container py-4">
-            <div class="ticker">
-                <p>Bold look of the week - Week collection</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>New arrival winter collections</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>Designer winter collection</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>Limited time - Price will increase soon</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>Bold look of the week - Week collection</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>New arrival winter collections</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>Designer winter collection</p>
-                <i class="fa-solid fa-star mx-2"></i>
-
-                <p>Limited time - Price will increase soon</p>
-            </div>
-        </section>
-        <!-- Products -->
-        <section class="container-fluid py-5 bg-light">
-
-            <header class="categories-header text-center mb-5 ">
-                <span>We have your occasion covered</span>
-                <h2>Featured products</h2>
-            </header>
-            <div id="products" class="row">
-
-            </div>
-
-            </div>
-        </section>
-        <!-- Girl-Offers -->
-        <section class="container-fluid my-2  ">
-            <div class="row mx-2">
-                <div class="col-lg-5 col-md-6 girl-offers">
-
-                    <span class="span1 mt-2">Feel pretty, Feel classy</span>
-                    <h2>30% OFF </h2>
-                    <p class="h2-span">For online purchase</p>
-                    <button class="collection-btn">COLLECTION
-                        <i class="fa-solid fa-square-arrow-up-right ms-2 fa-lg"></i>
-                    </button>
-
-                    </div>
-                    <div class="col-lg-7 col-md-6 p-0 d-flex align-items-center">
-                        <img src="images/banner1_78752618-8fe6-4899-a42e-b807ba9e84b7.jpg" class="w-100" alt="girl">
-                    </div>
-
-                </div>
-            </section>
-            <!-- Brands -->
-            <section>
-                <div id="brands" class="owl-carousel d-flex align-items-center py-5">
-                    <div class="mx-1 text-center">
-                        <img src="images/br-1_cdebba57-e5ed-4ca8-b5d8-94f6c234074f.png" class="w-50 m-auto "
-                            alt="brand-1">
-                    </div>
-                    <div class="mx-1 text-center">
-                        <img src="images/br-2_4bc0049a-0f06-4785-8d94-16278fa6a0c2.png" class="w-50 m-auto "
-                            alt="brand-2">
-
-                    </div>
-                    <div class="mx-1 text-center">
-                        <img src="images/br-3_93c21125-5c13-4e2b-a4cb-291511f6fc7f.png" class="w-50 m-auto "
-                            alt="brand-3">
-
-                    </div>
-                    <div class="mx-1 text-center">
-                        <img src="images/br-4_64be15f4-c5a3-49b3-a31c-8075d54f5e49.png" class="w-50 m-auto "
-                            alt="brand-4">
-
-                    </div>
-                    <div class="mx-1 text-center">
-                        <img src="images/br-5_e76a57ae-c2f7-478d-a203-5e3a2c66144f.png" class="w-50 m-auto "
-                            alt="brand-5">
-
-                    </div>
-                    <div class="mx-1 text-center">
-                        <img src="images/brand-logo.jpg" class="w-50 m-auto " alt="brand-6">
-
-                </div>
-
-                </div>
-            </section>
-            <!-- Blogs -->
-            <section class="container-fluid py-5 bg-light">
-                <header class="categories-header text-center mb-5 ">
-                    <span>Ubone blog news</span>
-                    <h2>Blog of fashion</h2>
-                </header>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6 p-3 text-center blog ">
-                        <div>
-                            <div class="img-layer position-relative w-100 h-100 ">
-                                <img src="./images/07_7b1e9529-1640-4913-82ce-288ddc2cda12.jpg" class="w-100"
-                                    alt="blog-1">
-                                <div class="layer"></div>
-                            </div>
-                            <div class="p-4">
-                                <p>Latest fashion is what you're offered four times a year by designer.</p>
-                                <span>04 JUN, 2022</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-3 text-center blog ">
-                        <div>
-                            <div class="img-layer position-relative ">
-                                <img src="./images/06_8bb67fb7-0470-4ddb-92fe-e9b625021466.jpg" class="w-100"
-                                    alt="blog-2">
-                                <div class="layer"></div>
-                            </div>
-                            <div class="p-4">
-                                <p>Every style is something each of us already has all we need.</p>
-                                <span>08 JUN, 2022</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-3 text-center blog ">
-                        <div>
-                            <div class="img-layer position-relative ">
-                                <img src="./images/05_d9a00204-3021-4f7a-b381-e0226af6cf3f.jpg" class="w-100"
-                                    alt="blog-3">
-                                <div class="layer"></div>
-                            </div>
-                            <div class="p-4">
-                                <p>Comfortable never sexier that when she is in her clothes </p>
-                                <span>12 JUN, 2022</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 p-3 text-center blog ">
-                        <div>
-                            <div class="img-layer position-relative ">
-                                <img src="./images/03_3a8638b7-7c20-45b0-9d21-91956b7cfebe.jpg" class="w-100"
-                                    alt="blog-4">
-                                <div class="layer"></div>
-                            </div>
-                            <div class="p-4">
-                                <p>Labels fashion is not necessarily about it's about brands</p>
-                                <span>19 JUN, 2022</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        <!-- Email -->
-        <section class="container-fluid py-5">
-            <header class="categories-header text-center mb-5 ">
-                <h2>Subscribe to get 10% discount!</h2>
-            </header>
-            <div>
-                <div class="input-group mb-3 email-input  m-auto ">
-                    <input type="text" class="form-control p-2" placeholder="Enter your email"
-                        aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary " type="button" id="button-addon2">SUBSCRIBE
-                        <i class="fa-regular fa-envelope mx-1"></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-        <!-- Featur-->
-        <section class="bg-light featur-section py-5">
-            <div class=" container py-lg-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-2 my-2 col-sm-6 text-center mx-lg-3 featur">
-                        <i class="fa-solid fa-location-dot fa-2xl mb-2"></i>
-                        <h6>Order tracking</h6>
-                        <span>Lorem ipsum dolor sit </span>
-                    </div>
-                    <div class="col-lg-2 my-2 col-sm-6 text-center mx-lg-3 featur">
-                        <i class="fa-solid fa-arrow-rotate-left fa-2xl"></i>
-                        <h6>
-                            90 days return
-                        </h6>
-                        <span>Lorem ipsum dolor sit </span>
-                    </div>
-                    <div class="col-lg-2 my-2 col-sm-6 text-center mx-lg-3 featur">
-                        <i class="fa-solid fa-dollar-sign fa-2xl"></i>
-                        <h6> Money guarantee </h6>
-                        <span>Lorem ipsum dolor sit </span>
-                    </div>
-                    <div class="col-lg-2 my-2 col-sm-6 text-center mx-lg-3 featur">
-                        <i class="fa-regular fa-credit-card fa-2xl"></i>
-                        <h6>Flexible payment </h6>
-                        <span>Lorem ipsum dolor sit </span>
-                    </div>
-                    <div class="col-lg-2 my-2 col-sm-6 text-center mx-lg-3 featur">
-                        <i class="fa-solid fa-shield fa-2xl"></i>
-                        <h6> Secure checkout </h6>
-                        <span> Lorem ipsum dolor sit </span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-            <!-- FOOTER -->
-            <footer class="bg-light py-5">
-                <div class="container ">
-                    <di class="row justify-lg-content-center">
-                        <div class="col-lg-2 col-sm-6 my-2">
-
-                        <h6>MY ACCOUNT</h6>
-                        <ul>
-                            <li class="my-2">My account</li>
-                            <li class="my-2">My cart</li>
-                            <li class="my-2">Wishlist</li>
-                            <li class="my-2">Order history</li>
-                            <li class="my-2">Return policy</li>
-
-                        </ul>
-                    </div>
-
-                        <div class="my-2 col-lg-2 col-sm-6">
-                            <h6> OUR LEGAL</h6>
-                            <ul>
-                                <li class="my-2"> Terms & condition</li>
-                                <li class="my-2"> Accessibility</li>
-                                <li class="my-2">About us</li>
-                                <li class="my-2"> Track order </li>
-                                <li class="my-2"> Store location </li>
-                            </ul>
-                        </div>
-                        <div class="my-2 col-lg-2 col-sm-6">
-                            <h6>INFORMATION</h6>
-                            <ul>
-                                <li class="my-2"> Our story</li>
-                                <li class="my-2"> Keep in touch</li>
-                                <li class="my-2"> Privacy policy</li>
-                                <li class="my-2"> Refund policy</li>
-                                <li class="my-2"> Faq's</li>
-                            </ul>
-                        </div>
-                        <div class="my-2 col-lg-2 col-sm-6">
-                            <h6>CONTACT US</h6>
-                            <ul>
-                                <li class="my-2"> +1234 567 890</li>
-                                <li class="my-2">info@domain.com</li>
-                                <li class="my-2"> We're located in Australia</li>
-                                <li class="my-2"> Custom care hours</li>
-                                <li class="my-2"> 3:00 PM - 11:30 PM</li>
-                            </ul>
-                        </div>
-                        <div class="my-2 col-lg-3 col-sm-6">
-                            <h6> OUR INSTAGRAM </h6>
-                            <div class="row gy-3">
-                                <div class="col-4">
-                                    <img src="images/marbo-lyfestyle-instagram-images-01_0554be35-9f59-46ea-aa5f-6f5d58a2d698.jpg"
-                                        class="w-100" alt="instgram-1">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/marbo-lyfestyle-instagram-images-02_ff4a7a24-58d4-4ee4-bec3-a9d2d98929ee.jpg"
-                                        class="w-100" alt="instgram-2">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/marbo-lyfestyle-instagram-images-03_df0babb4-0180-40d0-a0cd-570f054c4539.jpg"
-                                        class="w-100" alt="instgram-3">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/marbo-lyfestyle-instagram-images-04_24380b1d-4fa0-4a6e-b6d2-ea94217b8b82.jpg"
-                                        class="w-100" alt="instgram-4">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/marbo-lyfestyle-instagram-images-05_49c9fb27-6c9e-4e57-a68c-ea545521d282.jpg"
-                                        class="w-100" alt="instgram-5">
-                                </div>
-                                <div class="col-4">
-                                    <img src="images/marbo-lyfestyle-instagram-images-06_28ccd17f-1f61-4db6-a88d-21fa6b780a1d.jpg"
-                                        class="w-100" alt="instgram-6">
-                                </div>
-                            </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const storedWishlistCounter = sessionStorage.getItem("wishlistCounter");
+      const storedCartCounter = sessionStorage.getItem("cartCounter");
+      const wishlistCounterElement = document.querySelector(".wishlist-counter");
 
 
-                    </div>
-            </div>
-            </div>
+      if (storedWishlistCounter !== null) {
+        wishlistCounterElement.textContent = storedWishlistCounter;
+      }
+
+      if (storedCartCounter !== null) {
+        cartCounterElement.textContent = storedCartCounter;
+      }
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+      // get product ID from URL
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+      const wishlistCounterElement = document.querySelector(".wishlist-counter");
 
 
-        </footer>
+      // fetch product details
+      if (productId) {
+        fetch(`https://dummyjson.com/products/${productId}`)
+          .then((response) => response.json())
+          .then((product) => {
+            // set main product image
+            const mainImage = document.getElementById("main-image");
+            mainImage.src = product.images[0];
+            mainImage.alt = product.title;
 
-    </main>
+            // set product thumbnails
+            const productImages = document.getElementById("product-images");
+            product.images.forEach((image, index) => {
+              if (index === 0) return; // Skip the main image
+              const imgElement = document.createElement("img");
+              imgElement.src = image;
+              imgElement.alt = product.title;
+              imgElement.classList.add(
+                "w-20",
+                "h-20",
+                "rounded-lg",
+                "mr-2",
+                "cursor-pointer"
+              );
+              imgElement.addEventListener("click", () => {
+                mainImage.src = image;
+              });
+              productImages.querySelector(".flex").appendChild(imgElement);
+            });
+
+            // set product details
+            document.getElementById("product-title").innerText = product.title;
+            document.getElementById("new-price").innerText = `$${product.price}`;
+            document.getElementById("old-price").innerText = `$${(
+              product.price /
+              (1 - product.discountPercentage / 100)
+            ).toFixed(2)}`;
+            document.getElementById("sale-timer").innerText = "Sale ends in: 574:07:40:04";
+            document.getElementById("product-availability").innerText = `Availability: ${product.availabilityStatus} (${product.stock} in stock)`;
+            document.getElementById("product-description").innerText = product.description;
+            document.getElementById("product-sku").innerText = product.sku;
+            document.getElementById("product-brand").innerText = product.brand;
+            document.getElementById("product-weight").innerText = product.weight;
+            document.getElementById("product-dimensions").innerText = `${product.dimensions.width}x${product.dimensions.height}x${product.dimensions.depth}`;
+            document.getElementById("product-warranty").innerText = product.warrantyInformation;
+            document.getElementById("product-shipping").innerText = product.shippingInformation;
+
+            // set product rating
+            const productRating = document.getElementById("product-rating");
+            const fullStars = Math.floor(product.rating);
+            const halfStar = product.rating % 1 !== 0;
+            for (let i = 0; i < fullStars; i++) {
+              productRating.innerHTML += '<i class="fas fa-star"></i>';
+            }
+            if (halfStar) {
+              productRating.innerHTML += '<i class="fas fa-star-half-alt"></i>';
+            }
+            const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
+            for (let i = 0; i < emptyStars; i++) {
+              productRating.innerHTML += '<i class="far fa-star"></i>';
+            }
+
+            // set review count
+            const reviewCount = product.reviews.length;
+            document.getElementById("review-count").innerText = `${reviewCount} review${reviewCount !== 1 ? "s" : ""}`;
+
+            // set product reviews container
+            const reviewsContainer = document.getElementById("product-reviews");
+            product.reviews.forEach((review) => {
+              const reviewElement = document.createElement("div");
+              reviewElement.classList.add("bg-gray-100", "p-4", "mt-4", "rounded-lg");
+              reviewElement.innerHTML = `
+                                <p><strong>${review.reviewerName}</strong> (${new Date(review.date).toLocaleDateString()}): ${review.comment} - ${review.rating} stars</p>
+                            `;
+              reviewsContainer.appendChild(reviewElement);
+            });
+
+            window.currentProduct = product;
+          })
+          .catch((error) => console.error("Error fetching product:", error));
+      } else {
+        console.error("No product ID found in URL");
+      }
+    });
+
+    // add to cart function will get the product object and add it to the cart in the local storage
+    function addToCart() {
+      if (!window.currentProduct) {
+        console.error("Product details not loaded yet");
+        return;
+      }
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+
+      const productAddToCart = {
+        ...window.currentProduct,
+        quantity: 1,
+      };
+
+      if (productAddToCart) {
+        const existingItem = userCart.find(
+          (item) => item.id === parseInt(productId)
+        );
+
+        if (existingItem) {
+          // If the item exists in the cart, increment its quantity
+          existingItem.quantity = (existingItem.quantity || 0) + 1;
+        } else {
+          // If the item doesn't exist in the cart, add it with a quantity of 1
+          productAddToCart.quantity = 1;
+          userCart.push(productAddToCart);
+        }
+      }
 
 
+      // Update the cart counter and save to sessionStorage
+      cartCounterElement.textContent = userCart.reduce(
+        (acc, curr) => acc + curr.quantity,
+        0
+      );
+      sessionStorage.setItem("cartCounter", cartCounterElement.textContent);
+      sessionStorage.setItem("userCart", JSON.stringify(userCart));
+    }
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <!-- local js -->
-    <script src="js/home.js"></script>
-    <!-- Navbar -->
-    <script src="js/navbar.js"></script>
-    <script src="js/cartCount.js"></script>
+    // add to wishlist function will get the product object and add it to the wishlist in the local storage
+    function addToWishlist() {
+      event.stopPropagation();
 
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = urlParams.get("id");
+
+      fetch(`https://dummyjson.com/products/${productId}`)
+        .then((response) => response.json())
+        .then((data) => {
+          let productAddToWishlist = data;
+
+          console.log("productAddToWishlist", productAddToWishlist);
+
+          let userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+          let userWishList = JSON.parse(sessionStorage.getItem("userWishList")) || [];
+
+          if (productAddToWishlist) {
+            const existingItem = userWishList.find(
+              (item) => item.id === parseInt(productId)
+            );
+
+            if (existingItem) {
+              // If the item exists in the wishlist, increment its quantity
+              existingItem.wishlist = (existingItem.wishlist || 0) + 1;
+            } else {
+              // If the item doesn't exist in the wishlist, add it with a quantity of 1
+              productAddToWishlist.wishlist = 1;
+              userWishList.push(productAddToWishlist);
+            }
+          }
+
+          const wishlistCounterElement = document.querySelector(".wishlist-counter");
+
+          // Update the wishlist counter and save to sessionStorage
+          wishlistCounterElement.textContent = userWishList.reduce(
+            (acc, curr) => acc + curr.wishlist,
+            0
+          );
+          console.log("wishlistCounterElement", wishlistCounterElement.textContent);
+          sessionStorage.setItem(
+            "wishlistCounter",
+            wishlistCounterElement.textContent
+          );
+          sessionStorage.setItem("userWishList", JSON.stringify(userWishList));
+        })
+    }
+
+    function updateCartCounter() {
+      const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+      const cartCounterElement = document.querySelector(".cart-counter");
+      if (cartCounterElement) {
+        cartCounterElement.textContent = userCart.reduce((acc, curr) => acc + (curr.quantity || 0), 0);
+      }
+    }
+
+    function updateWishlistCounter() {
+      let userWishList = JSON.parse(sessionStorage.getItem("userWishList")) || [];
+      const wishlistCounterElement = document.querySelector(".wishlist-counter");
+      if (wishlistCounterElement) {
+        wishlistCounterElement.textContent = userWishList.reduce(
+          (acc, curr) => acc + curr.wishlist,
+          0
+        );
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      updateCartCounter();
+      updateWishlistCounter();
+    });
+  </script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+  <!-- Navbar -->
+  <script src="../js/navbar.js"></script>
 </body>
-
 </html>
