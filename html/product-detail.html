@@ -275,42 +275,75 @@
       }
     });
 
- // add to cart function will get the product object and add it to the cart in the local storage
+      // add to cart function will get the product object and add it to the cart in the local storage
       function addToCart() {
         if (!window.currentProduct) {
-          alert("Product details not loaded yet");
+          console.error("Product details not loaded yet");
           return;
         }
-        let userCart = JSON.parse(localStorage.getItem("userCart")) || [];
-        const productExists = userCart.some(
+        let userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+        const productIndex = userCart.findIndex(
           (item) => item.id === window.currentProduct.id
         );
-        if (!productExists) {
+        if (productIndex === -1) {
+          window.currentProduct.quantity = 1;
           userCart.push(window.currentProduct);
-          localStorage.setItem("userCart", JSON.stringify(userCart));
         } else {
-          alert("Product already in cart");
+          userCart[productIndex].quantity += 1;
         }
+        sessionStorage.setItem("userCart", JSON.stringify(userCart));
+        updateCartCounter();
       }
 
       // add to wishlist function will get the product object and add it to the wishlist in the local storage
       function addToWishlist() {
         if (!window.currentProduct) {
-          alert("Product details not loaded yet");
+          console.error("Product details not loaded yet");
           return;
         }
         let userWishlist =
-          JSON.parse(localStorage.getItem("userWishlist")) || [];
-        const productExists = userWishlist.some(
+          JSON.parse(sessionStorage.getItem("userWishlist")) || [];
+        const productIndex = userWishlist.findIndex(
           (item) => item.id === window.currentProduct.id
         );
-        if (!productExists) {
+        if (productIndex === -1) {
+          window.currentProduct.wishlist = 1;
           userWishlist.push(window.currentProduct);
-          localStorage.setItem("userWishlist", JSON.stringify(userWishlist));
         } else {
-          alert("Product already in wishlist");
+          userWishlist[productIndex].wishlist += 1;
+        }
+        sessionStorage.setItem("userWishlist", JSON.stringify(userWishlist));
+        updateWishlistCounter();
+      }
+
+      function updateCartCounter() {
+        const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+        const cartCounterElement = document.querySelector(".cart-counter");
+        if (cartCounterElement) {
+          cartCounterElement.textContent = userCart.reduce(
+            (acc, curr) => acc + (curr.quantity || 0),
+            0
+          );
         }
       }
+
+      function updateWishlistCounter() {
+        const userWishlist =
+          JSON.parse(sessionStorage.getItem("userWishlist")) || [];
+        const wishlistCounterElement =
+          document.querySelector(".wishlist-counter");
+        if (wishlistCounterElement) {
+          wishlistCounterElement.textContent = userWishlist.reduce(
+            (acc, curr) => acc + (curr.wishlist || 0),
+            0
+          );
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        updateCartCounter();
+        updateWishlistCounter();
+      });
   </script>
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
