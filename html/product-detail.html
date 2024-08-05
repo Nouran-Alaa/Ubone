@@ -55,6 +55,92 @@
     .btn-buy:hover {
       background-color: #e5e7eb;
     }
+
+  /* Add this media query for mobile responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 0.5rem;
+    }
+
+    .flex-col {
+      flex-direction: column;
+    }
+
+    #product-images, .w-full, .md\:w-1\/2, .md\:pl-10 {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    .pl-10 {
+      padding-left: 0;
+    }
+
+    .mr-4 {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .navbar-brand img {
+      width: 100px;
+    }
+
+    .bg-white {
+      padding: 1rem;
+    }
+
+    .flex {
+      flex-direction: column;
+    }
+
+    .btn-cart, .btn-buy {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Specific part for smaller screens */
+    .product-thumbnail img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 0.375rem;
+      margin-right: 0.5rem;
+    }
+
+    #product-images .flex {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .star-rating, .review-count {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    .availability {
+      font-size: 0.875rem;
+    }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    #product-rating {
+      font-size: 0.84rem;
+    }
+
+    .rating-and-reviews-and-price {
+      align-items: flex-start;
+      flex-direction: row;
+    }
+
+    .product-description {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+    }
+  }
   </style>
 </head>
 
@@ -105,11 +191,11 @@
       </div>
       <div class="w-1/2 pl-10">
         <h1 id="product-title" class="text-2xl font-bold"></h1>
-        <div class="flex items-center mt-2">
+        <div class="rating-and-reviews-and-price flex items-center mt-2">
           <div id="product-rating" class="star-rating text-lg flex"></div>
           <p id="review-count" class="text-gray-600 ml-2"></p>
         </div>
-        <div class="flex items-center mt-2">
+        <div class="rating-and-reviews-and-price flex items-center mt-2">
           <span id="old-price" class="text-gray-500 line-through mr-2"></span>
           <span id="new-price" class="text-xl text-green-500 font-semibold"></span>
         </div>
@@ -138,10 +224,6 @@
             <strong>Shipping:</strong> <span id="product-shipping"></span>
           </p>
         </div>
-        <div id="product-reviews" class="mt-6">
-          <h2 class="text-lg font-bold">Reviews</h2>
-          <!-- Reviews will be injected here -->
-        </div>
         <div class="flex mt-6">
           <button class="btn btn-cart mr-4" onclick="addToCart()">
             <i class="fas fa-shopping-cart"></i> Add to Cart
@@ -149,6 +231,10 @@
           <button class="btn btn-buy" onclick="addToWishlist()">
             <i class="fas fa-heart"></i> Add to Wishlist
           </button>
+        </div>
+        <div id="product-reviews" class="mt-6">
+          <h2 class="text-lg font-bold">Reviews</h2>
+          <!-- Reviews will be injected here -->
         </div>
       </div>
     </div>
@@ -377,5 +463,4 @@
   <!-- Navbar -->
   <script src="../js/navbar.js"></script>
 </body>
-
 </html>
