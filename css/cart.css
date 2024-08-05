@@ -170,7 +170,7 @@ form {
 .progress-circle {
   content: "\e9e8";
   position: absolute;
-  top: 46%;
+  bottom: 35px;
   transform: translateY(-50%);
   background-color: #475476; /* Light orange color */
   height: 30px; /* Adjust the circle size as needed */
