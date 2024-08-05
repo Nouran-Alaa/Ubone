@@ -49,9 +49,7 @@ nav li:hover .nav-link {
   align-items: center;
   gap: 0.5rem;
 }
-.span-important {
-  font-size: 13px !important;
-}
+
 .nav-icons span {
   color: black;
   font-size: 1.6rem;
