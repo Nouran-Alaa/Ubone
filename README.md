@@ -67,4 +67,4 @@ We welcome contributions from the community! Whether you want to fix bugs, add n
 - Arwa Youssef
 - Karim Adel
 
-Thank you for checking out Ubone! We hope you enjoy exploring our project and contributing to the future of fashion e-commerce. 🌟
+Thank you for checking out Ubone! We hope you enjoy exploring our project and contributing to the future of fashion e-commerce. <3 🌟
