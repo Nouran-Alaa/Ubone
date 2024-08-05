@@ -12,8 +12,11 @@ Welcome to **Ubone**! 🎨👗👖
 - **Product Pages:** Detailed product descriptions, high-quality images, and customer reviews to help you make informed decisions.
 - **Shopping Cart:** Add, update, and remove items from your cart with ease.
 - **Secure Checkout:** Safe and secure payment processing with multiple payment options.
+  - **Input Validation:** Every input on the checkout page is validated to ensure accuracy and security.
 - **User Accounts:** Create and manage your account, track orders, and save favorite items.
 - **Order Management:** Admin features for managing orders, tracking inventory, and updating product information.
+- **Discount Coupons:** Apply discount coupons at checkout to receive discounts on your purchase.
+- **Shipping Fee Calculation:** Shipping fees are calculated instantly when you enter your address during checkout.
 - **Responsive Design:** Fully responsive and optimized for both desktop and mobile devices.
 
 ## 🛠️ Technologies Used
