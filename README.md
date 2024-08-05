@@ -23,6 +23,7 @@ Welcome to **Ubone**! 🎨👗👖
 
 - HTML
 - CSS
+- Bootstrap
 - JavaScript
 
 ## 📦 Installation
