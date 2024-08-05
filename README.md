@@ -11,6 +11,7 @@ Welcome to **Ubone**! 🎨👗👖
 - **Search & Filters:** Advanced search options and filtering to help customers find exactly what they’re looking for.
 - **Product Pages:** Detailed product descriptions, high-quality images, and customer reviews to help you make informed decisions.
 - **Shopping Cart:** Add, update, and remove items from your cart with ease.
+- **Wishlist Page:** Customers can add items they wish to purchase to their wishlist, and from the wishlist page, they can add items to the cart or remove them from the wishlist.
 - **Secure Checkout:** Safe and secure payment processing with multiple payment options.
   - **Input Validation:** Every input on the checkout page is validated to ensure accuracy and security.
 - **User Accounts:** Create and manage your account, track orders, and save favorite items.
