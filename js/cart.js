@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       cartTableBody.insertAdjacentHTML("beforeend", cartItemHtml);
     });
     updateSubtotal();
+    updateCartCounter();
   }
 
   let subtotalval = 0;
@@ -130,6 +131,17 @@ document.addEventListener("DOMContentLoaded", () => {
     renderCart();
   }
 
+  function updateCartCounter() {
+    const userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
+    const cartCounterElement = document.querySelector(".cart-counter");
+    if (cartCounterElement) {
+      cartCounterElement.textContent = userCart.reduce(
+        (acc, curr) => acc + curr.quantity,
+        0
+      );
+    }
+  }
+
   // Function to delete an item from the cart
   function deleteCartItem(index) {
     let userCart = JSON.parse(sessionStorage.getItem("userCart")) || [];
@@ -145,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const index = cartItem.dataset.index;
       const currentQuantity = parseInt(cartItem.querySelector(".count").value);
       updateItemQuantity(index, currentQuantity + 1);
+      updateCartCounter();
     }
 
     if (event.target.closest(".minus")) {
@@ -152,12 +165,14 @@ document.addEventListener("DOMContentLoaded", () => {
       const index = cartItem.dataset.index;
       const currentQuantity = parseInt(cartItem.querySelector(".count").value);
       updateItemQuantity(index, currentQuantity - 1);
+      updateCartCounter();
     }
 
     if (event.target.closest(".trash-icon")) {
       const cartItem = event.target.closest(".cart-item");
       const index = cartItem.dataset.index;
       deleteCartItem(index);
+      updateCartCounter();
     }
   });
 

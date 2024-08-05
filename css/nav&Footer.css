@@ -14,14 +14,19 @@ nav {
   width: 50%;
 }
 
-.nav-link {
+a {
+  text-decoration: none;
+}
+
+.nav-link,
+.nav-icon {
   margin: 0 10px;
   position: relative;
   font-size: 20px;
   margin: 0 10px;
   color: #222 !important;
   text-align: left;
-  padding: 0 !important;
+  padding: 5px !important;
   overflow: hidden;
 }
 
@@ -35,6 +40,12 @@ nav li:hover .nav-link {
   border-bottom: solid 3px RGB(71, 84, 118);
   color: RGB(71, 84, 118) !important;
 }
+
+nav li:hover .nav-icon,
+.nav-icons:hover {
+  color: RGB(71, 84, 118) !important;
+}
+
 .navbar-nav:last-child {
   gap: 1rem;
 }
@@ -48,6 +59,7 @@ nav li:hover .nav-link {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  color: #222 !important;
 }
 
 .nav-icons span {
@@ -113,7 +125,8 @@ footer ul li {
     width: 40%;
   }
 
-  .nav-link {
+  .nav-link,
+  .nav-icon {
     font-size: 13px;
   }
 
