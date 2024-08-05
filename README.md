@@ -17,6 +17,7 @@ Welcome to **Ubone**! 🎨👗👖
 - **Order Management:** Admin features for managing orders, tracking inventory, and updating product information.
 - **Discount Coupons:** Apply discount coupons at checkout to receive discounts on your purchase.
 - **Shipping Fee Calculation:** Shipping fees are calculated instantly when you enter your address during checkout.
+- **API Integration & Session Storage:** Product data is fetched from an external API and stored in session storage, allowing seamless and efficient access across different pages of the website.
 - **Responsive Design:** Fully responsive and optimized for both desktop and mobile devices.
 
 ## 🛠️ Technologies Used
