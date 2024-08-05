@@ -1066,6 +1066,15 @@ aside {
   /* gap: 6rem; */
 }
 
+.our-service-area i {
+  color: black;
+}
+
+.our-service-area i:hover {
+  color: #555555;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 984px) {
   .our-service-area {
     grid-template-columns: repeat(3, 1fr);
